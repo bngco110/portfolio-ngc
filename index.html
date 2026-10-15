@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ngoc Nguyen — UI/UX Designer Portfolio</title>
+  <meta name="description" content="Portfolio của Ngoc Nguyen — UI/UX Designer gần 3 năm kinh nghiệm với tư duy lấy người dùng làm trung tâm (User-Centered Mindset). Chuyên môn về E-commerce, Recruitment, Web3 Crypto Commerce & Telegram Mini Games." />
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Google Fonts: Plus Jakarta Sans (Gilroy Fallback), Fredoka (Logo) & Fira Code (Monospace) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Core Minimalist Web System Stylesheet -->
+  <link rel="stylesheet" href="index.css?v=9.4" />
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Custom View Detail Follower Cursor for Product Cards -->
+  <div id="view-more-cursor" class="view-more-cursor" aria-hidden="true">
+    <span>View Detail</span>
+  </div>
+
+  <!-- HEADER: Logo on Left, Menu Tabs on Right (Home - My projects - About me) -->
+  <header class="site-header" id="header">
+    <div class="container-standard header-container">
+      
+      <!-- Logo on the left: Only logo mark with 'BNG' -->
+      <a href="#home" class="brand-logo" aria-label="BNG Home">
+        <span class="brand-mark">BNG</span>
+      </a>
+
+      <!-- Menu tab on the right: Home - My projects - About me -->
+      <nav class="main-nav">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#projects" class="nav-link">My projects</a>
+        <a href="#about" class="nav-link">About me</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION: Background #FAFAFA, refined compact typography & image -->
+    <section id="home" class="hero-section" style="padding-top: 72px; padding-bottom: 88px; background-color: #FAFAFA; border-bottom: none;">
+      <div class="container-standard">
+        
+        <!-- Hero Grid with 2 sides, column gap 90px -->
+        <div class="grid-system" style="align-items: flex-start; column-gap: 90px; row-gap: var(--space-8);">
+          
+          <!-- LEFT SIDE: 16:9 Image (refined compact size) & Title 'Ngoc Nguyen' (56px, 1 single line) -->
+          <div class="col-6 col-12-tablet hero-editorial-left hero-animate-left">
+            <div style="width: 100%; max-width: 520px;">
+              <!-- 16:9 Aspect Ratio Profile Photo (Physical dimensions enlarge as you scroll down) -->
+              <div class="hero-avatar-frame" style="width: 400px; max-width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--radius-sm); margin-bottom: var(--space-4); background-color: #FFFFFF;">
+                <img id="hero-avatar-img" class="hero-avatar-img" src="assets/hero_avatar.jpg?v=3.8" alt="Ngoc Nguyen — UI/UX Designer" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;" />
+              </div>
+              <!-- Title Ngoc Nguyen: 56px, Font Weight 600, 1 Single Line -->
+              <h1 class="type-display" style="font-size: 56px; font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; color: var(--color-text-primary); white-space: nowrap;">
+                Ngoc Nguyen
+              </h1>
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE: Title 'Hello' 38px & Compact Bio Body Text 14.5px -->
+          <div class="col-6 col-12-tablet hero-animate-right" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 350px;">
+            <div style="width: 100%; max-width: 520px; margin-left: auto;">
+              <!-- Title: Hello (38px, thinner weight, SAME COLOR #000000 as Ngoc Nguyen) -->
+              <h2 class="type-h1" style="font-size: 38px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 12px; line-height: 1.15; letter-spacing: -0.015em;">
+                Hello
+              </h2>
+
+              <!-- Bio Paragraph 1: 14.5px -->
+              <p class="type-body-default" style="font-size: 14.5px; margin-bottom: 10px; line-height: 1.6; color: var(--color-text-secondary);">
+                My name is Ngoc and I’m a UI/UX Designer with nearly 3 years of experience, driven by a user centered mindset. With a high level of adaptability, focus and accountability, I focus on creating intuitive, well crafted designs that not only look refined but also solve real user problems.
+              </p>
+
+              <!-- Bio Paragraph 2: 14.5px -->
+              <p class="type-body-default" style="font-size: 14.5px; margin-bottom: 0; line-height: 1.6; color: var(--color-text-secondary);">
+                My skills include UI design, UX research and a versatile set of supporting technical skills. I have experience working on E-commerce platforms in Fashion, Cosmetics and Pharmaceutical fields, as well as Recruitment platforms, Web3 Crypto Commerce apps, and Telegram mini game apps.
+              </p>
+            </div>
+
+            <!-- Bottom Right Download CV CTA Button -->
+            <div style="margin-top: var(--space-6); text-align: right;">
+              <a href="#" download onclick="alert('Downloading Ngoc Nguyen UI/UX Designer CV...'); return false;" class="btn btn-primary" style="font-size: 13.5px; font-weight: 600; padding: 9px 18px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <span>Download CV</span>
+                <i class="fa-solid fa-arrow-down" style="font-size: 0.85em;"></i>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: MY PROJECTS (2 Lines x 2 Product Cards, 16:9 Thumbnails, Clean Hover Zoom & Custom View More Cursor) -->
+    <section id="projects" class="section" style="background-color: #FFFFFF; border-bottom: none;">
+      <div class="container-standard">
+        
+        <div class="section-header scroll-reveal">
+          <div class="projects-title-wrapper">
+            <span class="projects-title-line"></span>
+            <h2 class="projects-title">My projects</h2>
+          </div>
+        </div>
+
+        <!-- 2-Column Product Cards Grid (1 hàng 2 card) -->
+        <div class="projects-grid-2col">
+          
+          <!-- CARD 1: Fanidol -->
+          <article class="project-card-vertical project-card-interactive scroll-reveal" id="project-card-fanidol" data-modal-image="assets/fanidol_detail.png?v=3.7" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/fanidol.png" alt="Fanidol — K-pop Tap-to-Earn Game Platform" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              Fanidol
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              A tap-to-earn game/mission platform for the K-pop community.
+            </p>
+          </article>
+
+          <!-- CARD 2: Ubello -->
+          <article class="project-card-vertical project-card-interactive scroll-reveal" id="project-card-ubello" data-modal-image="assets/ubello_detail.png?v=3.7" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/ubello.png" alt="Ubello — Non-custodial Web3 App" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              Ubello
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              Ubello is a non-custodial Web3 app for secure asset management and everyday payments.
+            </p>
+          </article>
+
+          <!-- CARD 3: KpopRoad Website -->
+          <article class="project-card-vertical project-card-interactive scroll-reveal" id="project-card-kpoproad" data-modal-image="assets/kpoproad_detail.png?v=3.7" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/kpoproad.png" alt="KpopRoad Website" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              KpopRoad Website
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              A Web3 platform for K-pop fans to collect NFTs, participate in voting, and connect directly with idols worldwide.
+            </p>
+          </article>
+
+          <!-- CARD 4: YourC -->
+          <article class="project-card-vertical project-card-interactive scroll-reveal" id="project-card-yourc" data-modal-image="assets/yourc_detail.png?v=3.7" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/yourc.png" alt="YourC Vietnam Travel App" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              YourC
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              YourC app will provide users with the necessary services and utilities at preferential prices when traveling in Vietnam.
+            </p>
+          </article>
+
+          <!-- CARD 5: Ado (Extra Card 1) -->
+          <article class="project-card-vertical project-card-interactive project-card-extra" data-modal-image="assets/ado_detail.png?v=4.0" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/ado.png" alt="Ado — Pet Adoption Platform" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              Ado
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              Ado is a platform that supports animal lovers in adopting abandoned or stray pets in Vietnam
+            </p>
+          </article>
+
+          <!-- CARD 6: Gretta (Extra Card 2) -->
+          <article class="project-card-vertical project-card-interactive project-card-extra" data-modal-image="assets/gretta.png" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/gretta.png" alt="Gretta — Modern Home Design &amp; Architecture" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              Gretta
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              A website specializing in modern home design solutions and architectural inspiration.
+            </p>
+          </article>
+
+          <!-- CARD 7: Recozy (Extra Card 3) -->
+          <article class="project-card-vertical project-card-interactive project-card-extra" data-modal-image="assets/recozy.png" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/recozy.png" alt="Recozy — Premium Home Decor &amp; Furniture" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              Recozy
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              A website offering wholesale and retail of premium home decor products.
+            </p>
+          </article>
+
+          <!-- CARD 8: Relex (Extra Card 4) -->
+          <article class="project-card-vertical project-card-interactive project-card-extra" data-modal-image="assets/relex.png" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/relex.png" alt="Relex — Luxury Watches Platform" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              Relex
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              A platform that distributes renowned watch brands and provides the latest news and updates about the watch industry.
+            </p>
+          </article>
+
+          <!-- CARD 9: Radiant Skincare (Extra Card 5) -->
+          <article class="project-card-vertical project-card-interactive project-card-extra" data-modal-image="assets/radiant_skincare.png" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/radiant_skincare.png" alt="Radiant Skincare — Gentle Skincare &amp; Expert Beauty Tips" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              Radiant Skincare
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              A website offering gentle skincare products and sharing expert tips and blogs on skin care.
+            </p>
+          </article>
+
+          <!-- CARD 10: THEROWD (Coming Soon — Non-hoverable) -->
+          <article class="project-card-vertical project-card-extra project-card-coming-soon">
+            <div class="project-card-vertical-thumb" style="position: relative;">
+              <img src="assets/therowd.png" alt="THEROWD — Web3 Investment Platform" />
+              <span class="card-badge-coming-soon">Coming Soon</span>
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              THEROWD
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              A platform that leverages blockchain technology to connect investors with promising projects and fundraising opportunities.
+            </p>
+          </article>
+
+        </div>
+
+        <!-- CTA Actions under Product Cards Grid -->
+        <div id="projectsCtaWrapper" class="scroll-reveal" style="margin-top: var(--space-10); text-align: center;">
+          <!-- 1. Primary CTA: View More Button (Active initially with 4 cards) -->
+          <button id="viewMoreProjectsBtn" type="button" onclick="window.handleViewMoreProjects(event)" class="btn btn-primary" style="font-size: 15px; font-weight: 600; padding: 12px 28px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; border: none; border-radius: var(--radius-sm); font-family: inherit;">
+            <span>View more</span>
+            <i class="fa-solid fa-arrow-down" style="font-size: 0.9em;"></i>
+          </button>
+
+          <!-- 2. Secondary CTA: View Less Button (Active after expanding all 10 cards, distinct soft minimalist style) -->
+          <button id="viewLessProjectsBtn" type="button" onclick="window.handleViewLessProjects(event)" class="btn btn-view-less" style="display: none; font-size: 15px; font-weight: 500; padding: 11px 26px; cursor: pointer; align-items: center; gap: 10px; font-family: inherit;">
+            <span>View less</span>
+            <i class="fa-solid fa-arrow-up" style="font-size: 0.85em;"></i>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: ABOUT ME (Pure White #FFFFFF background, 3:7 Ratio Split) -->
+    <section id="about" class="section" style="background-color: #FFFFFF;">
+      <div class="container-standard">
+        
+        <div class="section-header scroll-reveal">
+          <div class="about-title-wrapper">
+            <span class="about-title-line"></span>
+            <h2 class="about-title">About me</h2>
+          </div>
+        </div>
+
+        <!-- 3:7 Ratio Grid System (Left 30% / Right 70%) -->
+        <div class="grid-system" style="align-items: flex-start; column-gap: var(--space-12); row-gap: var(--space-8);">
+          
+          <!-- LEFT SIDE (3 / 30% Ratio): Personal Info (Sticky on Scroll) -->
+          <div class="col-4 col-12-tablet scroll-reveal" style="position: sticky; top: 100px;">
+            <div class="about-profile-card">
+              <!-- Info Lines: Tên Ngoc Nguyen (58px) & Cụm liên hệ (SĐT, Gmail, Địa chỉ) -->
+              <div class="about-profile-info">
+                <!-- Line 1: Ngoc Nguyen (54px Heading) -->
+                <h3 class="about-profile-name" style="margin: 0; font-size: 54px;">
+                  Ngoc Nguyen
+                </h3>
+
+                <!-- Cụm thông tin liên hệ: SĐT, Gmail, Địa chỉ (padding/gap: 8px) -->
+                <div class="about-profile-group">
+                  <!-- Line 2: 090 842 0809 -->
+                  <a href="tel:0908420809" class="type-body-default" style="color: var(--color-text-secondary); text-decoration: none; font-size: 16px; display: flex; align-items: center; gap: 8px; transition: color var(--transition-fast); margin: 0;">
+                    <i class="fa-solid fa-phone" style="color: var(--color-text-secondary); font-size: 0.85em;"></i>
+                    <span>090 842 0809</span>
+                  </a>
+
+                  <!-- Line 4: nguyendaobaongoc110@gmail.com -->
+                  <a href="mailto:nguyendaobaongoc110@gmail.com" class="type-body-default" style="color: var(--color-text-secondary); text-decoration: none; font-size: 16px; display: flex; align-items: center; gap: 8px; transition: color var(--transition-fast); margin: 0;">
+                    <i class="fa-solid fa-envelope" style="color: var(--color-text-secondary); font-size: 0.85em;"></i>
+                    <span>nguyendaobaongoc110@gmail.com</span>
+                  </a>
+
+                  <!-- Line 5: District 1, Ho Chi Minh City -->
+                  <div class="type-body-default" style="color: var(--color-text-secondary); font-size: 16px; display: flex; align-items: center; gap: 8px; margin: 0;">
+                    <i class="fa-solid fa-location-dot" style="color: var(--color-text-secondary); font-size: 0.9em;"></i>
+                    <span>District 1, Ho Chi Minh City</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE (7 / 70% Ratio): EXPERIENCE, EDUCATION, COURSES, TOOLS, COURSES (Borderless Minimalist Layout) -->
+          <div class="col-8 col-12-tablet">
+            <div class="about-accordion-list" style="margin-top: 2px;">
+              
+              <!-- 1. EXPERIENCE -->
+              <div class="accordion-item accordion-item-experience is-collapsed scroll-reveal" id="accordion-experience">
+                <button class="accordion-header collapsed" aria-expanded="false" type="button">
+                  <h3 class="about-heading-sync" style="margin: 0;">
+                    Experience
+                  </h3>
+                  <i class="fa-solid fa-plus accordion-icon accordion-chevron"></i>
+                </button>
+
+                <div class="accordion-body collapsed">
+                  <div style="display: flex; flex-direction: column; gap: var(--space-6);">
+                    
+                    <!-- ROLE 1: SalesCore Co, Ltd -->
+                    <div style="padding-bottom: var(--space-6); border-bottom: 1px dashed var(--color-border-default);">
+                      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: var(--space-2);">
+                        <h4 class="type-h4" style="font-size: 18px; font-weight: 700; color: var(--color-text-primary); margin: 0; flex: 1; min-width: 0;">
+                          UI/UX Designer, SalesCore Co, Ltd
+                        </h4>
+                        <span class="type-caption" style="color: var(--color-text-secondary); font-size: 13px; font-weight: 600; background-color: var(--color-surface-muted); padding: 4px 10px; border-radius: var(--radius-sm); white-space: nowrap; margin-left: auto; text-align: right; flex-shrink: 0;">Jun 2024 — Present</span>
+                      </div>
+
+                      <ul style="margin: 0; padding-left: 18px; color: var(--color-text-secondary); font-size: 16px; line-height: 1.65; display: flex; flex-direction: column; gap: 6px;">
+                        <li>Worked on E-commerce (Cosmetics &amp; Fashion) and Entertainment Recruitment Web/App platforms, focusing on designing scalable, manageable, and user friendly interfaces.</li>
+                        <li>Designed a high traffic Web3 platform integrating Fan Voting, E-commerce, and Blockchain technology including NFTs and digital rewards to enhance global K-pop community engagement.</li>
+                        <li>Designed and implemented mobile user interfaces for Telegram Mini-Apps (TMA) featuring idol voting and community engagement and Crypto Commerce Apps, with a strong focus on usability, visual clarity and conversion rate optimization.</li>
+                        <li>Conducted user research and feedback reviews to enhance platform usability and accessibility.</li>
+                        <li>Collaborated with cross-functional team to understand requirements and deliver user-centric solutions.</li>
+                        <li>Created wireframes, prototypes, mockups and detailed UI assets that streamlined product updates.</li>
+                        <li>Created visual assets (banners, posters, thumbnails, covers, etc.) for Web3, E-commerce platforms and Telegram mini apps.</li>
+                      </ul>
+                    </div>
+
+                    <!-- ROLE 2: Norway Pharmatech As Medicine Joint Stock Company -->
+                    <div>
+                      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: var(--space-2);">
+                        <h4 class="type-h4" style="font-size: 18px; font-weight: 700; color: var(--color-text-primary); margin: 0; flex: 1; min-width: 0;">
+                          UI/UX Designer, Norway Pharmatech As Medicine Joint Stock Company
+                        </h4>
+                        <span class="type-caption" style="color: var(--color-text-secondary); font-size: 13px; font-weight: 600; background-color: var(--color-surface-muted); padding: 4px 10px; border-radius: var(--radius-sm); white-space: nowrap; margin-left: auto; text-align: right; flex-shrink: 0;">Jul 2023 — Jun 2024</span>
+                      </div>
+
+                      <ul style="margin: 0; padding-left: 18px; color: var(--color-text-secondary); font-size: 16px; line-height: 1.65; display: flex; flex-direction: column; gap: 6px;">
+                        <li>Designed a modern and trustworthy Healthcare &amp; Wellness E-commerce interface. Focused on optimizing the Visual System, ensuring high aesthetic standards and consistency throughout the customer's shopping journey.</li>
+                        <li>Developed wireframes, prototypes and detailed design specifications for Web/ App platforms.</li>
+                        <li>Collaborated cross-functionally with product and engineering teams to refine design outcomes and maintain consistency across features.</li>
+                        <li>Designed thumbnails, banners and pop-ups for Healthcare &amp; Wellness product displays on an E-commerce website.</li>
+                        <li>Handle other design-related tasks as assigned by the team.</li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2. EDUCATION -->
+              <div class="accordion-item is-collapsed scroll-reveal">
+                <button class="accordion-header collapsed" aria-expanded="false" type="button">
+                  <h3 class="about-heading-sync" style="margin: 0;">
+                    Education
+                  </h3>
+                  <i class="fa-solid fa-plus accordion-icon accordion-chevron"></i>
+                </button>
+
+                <div class="accordion-body collapsed">
+                  <div>
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: var(--space-2);">
+                      <h4 class="type-h4" style="font-size: 18px; font-weight: 700; color: var(--color-text-primary); margin: 0; flex: 1;">
+                        Ho Chi Minh City University of Foreign Languages and Information Technology
+                      </h4>
+                      <span class="type-caption" style="color: var(--color-text-secondary); font-size: 13px; font-weight: 600; background-color: var(--color-surface-muted); padding: 4px 10px; border-radius: var(--radius-sm); white-space: nowrap; margin-left: auto;">Sept 2017 — Jun 2021</span>
+                    </div>
+                    <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin-top: 4px; margin-bottom: 0; line-height: 1.6;">
+                      Major: Korean
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3. COURSES -->
+              <div class="accordion-item is-collapsed scroll-reveal">
+                <button class="accordion-header collapsed" aria-expanded="false" type="button">
+                  <h3 class="about-heading-sync" style="margin: 0;">
+                    Courses
+                  </h3>
+                  <i class="fa-solid fa-plus accordion-icon accordion-chevron"></i>
+                </button>
+
+                <div class="accordion-body collapsed">
+                  <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+                    
+                    <!-- Course 1 -->
+                    <div style="padding-bottom: 12px; border-bottom: 1px dashed var(--color-border-default);">
+                      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 4px;">
+                        <h4 class="type-h4" style="font-size: 18px; font-weight: 700; color: var(--color-text-primary); margin: 0; flex: 1;">
+                          Hi-fi Prototype: UX/UI Motion Design
+                        </h4>
+                        <span class="type-caption" style="color: var(--color-text-secondary); font-size: 13px; font-weight: 600; background-color: var(--color-surface-muted); padding: 4px 10px; border-radius: var(--radius-sm); white-space: nowrap; margin-left: auto;">Jun 2023 — Sept 2023</span>
+                      </div>
+                      <p style="font-size: 16px; color: var(--color-text-secondary); margin: 0;">
+                        Keyframe Multimedia School
+                      </p>
+                    </div>
+
+                    <!-- Course 2 -->
+                    <div style="padding-bottom: 12px; border-bottom: 1px dashed var(--color-border-default);">
+                      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 4px;">
+                        <h4 class="type-h4" style="font-size: 18px; font-weight: 700; color: var(--color-text-primary); margin: 0; flex: 1;">
+                          UIUX Web/Mobile App Product Design
+                        </h4>
+                        <span class="type-caption" style="color: var(--color-text-secondary); font-size: 13px; font-weight: 600; background-color: var(--color-surface-muted); padding: 4px 10px; border-radius: var(--radius-sm); white-space: nowrap; margin-left: auto;">Mar 2023 — May 2023</span>
+                      </div>
+                      <p style="font-size: 16px; color: var(--color-text-secondary); margin: 0;">
+                        Keyframe Multimedia School
+                      </p>
+                    </div>
+
+                    <!-- Course 3 -->
+                    <div style="padding-bottom: 12px; border-bottom: 1px dashed var(--color-border-default);">
+                      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 4px;">
+                        <h4 class="type-h4" style="font-size: 18px; font-weight: 700; color: var(--color-text-primary); margin: 0; flex: 1;">
+                          Figma UI Design
+                        </h4>
+                        <span class="type-caption" style="color: var(--color-text-secondary); font-size: 13px; font-weight: 600; background-color: var(--color-surface-muted); padding: 4px 10px; border-radius: var(--radius-sm); white-space: nowrap; margin-left: auto;">Nov 2022 — Dec 2022</span>
+                      </div>
+                      <p style="font-size: 16px; color: var(--color-text-secondary); margin: 0;">
+                        Keyframe Multimedia School
+                      </p>
+                    </div>
+
+                    <!-- Course 4 -->
+                    <div style="padding-bottom: 12px; border-bottom: 1px dashed var(--color-border-default);">
+                      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 4px;">
+                        <h4 class="type-h4" style="font-size: 18px; font-weight: 700; color: var(--color-text-primary); margin: 0; flex: 1;">
+                          Illustrator Graphics Basic To Intermediate
+                        </h4>
+                        <span class="type-caption" style="color: var(--color-text-secondary); font-size: 13px; font-weight: 600; background-color: var(--color-surface-muted); padding: 4px 10px; border-radius: var(--radius-sm); white-space: nowrap; margin-left: auto;">Aug 2022 — Oct 2022</span>
+                      </div>
+                      <p style="font-size: 16px; color: var(--color-text-secondary); margin: 0;">
+                        Keyframe Multimedia School
+                      </p>
+                    </div>
+
+                    <!-- Course 5 -->
+                    <div>
+                      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 4px;">
+                        <h4 class="type-h4" style="font-size: 18px; font-weight: 700; color: var(--color-text-primary); margin: 0; flex: 1;">
+                          Photoshop Basic
+                        </h4>
+                        <span class="type-caption" style="color: var(--color-text-secondary); font-size: 13px; font-weight: 600; background-color: var(--color-surface-muted); padding: 4px 10px; border-radius: var(--radius-sm); white-space: nowrap; margin-left: auto;">Jun 2022 — Jul 2022</span>
+                      </div>
+                      <p style="font-size: 16px; color: var(--color-text-secondary); margin: 0;">
+                        Keyframe Multimedia School
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4. TOOLS -->
+              <div class="accordion-item is-collapsed scroll-reveal">
+                <button class="accordion-header collapsed" aria-expanded="false" type="button">
+                  <h3 class="about-heading-sync" style="margin: 0;">
+                    Tools
+                  </h3>
+                  <i class="fa-solid fa-plus accordion-icon accordion-chevron"></i>
+                </button>
+
+                <div class="accordion-body collapsed">
+                  <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                    <!-- Figma -->
+                    <div class="tool-logo-badge">
+                      <svg width="24" height="24" viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"/>
+                        <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83"/>
+                        <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"/>
+                        <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
+                        <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
+                      </svg>
+                      <span>Figma</span>
+                    </div>
+
+                    <!-- Ai (Adobe Illustrator) -->
+                    <div class="tool-logo-badge">
+                      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="7" fill="#330000"/>
+                        <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" stroke="#FF9A00" stroke-width="1.5" stroke-opacity="0.8"/>
+                        <text x="16" y="21.5" font-family="'Gilroy', 'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="15" fill="#FF9A00" text-anchor="middle">Ai</text>
+                      </svg>
+                      <span>Adobe Illustrator</span>
+                    </div>
+
+                    <!-- Ps (Adobe Photoshop) -->
+                    <div class="tool-logo-badge">
+                      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="7" fill="#001E36"/>
+                        <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" stroke="#31A8FF" stroke-width="1.5" stroke-opacity="0.8"/>
+                        <text x="16" y="21.5" font-family="'Gilroy', 'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="15" fill="#31A8FF" text-anchor="middle">Ps</text>
+                      </svg>
+                      <span>Adobe Photoshop</span>
+                    </div>
+
+                    <!-- Ae (Adobe After Effects) -->
+                    <div class="tool-logo-badge">
+                      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="7" fill="#11002C"/>
+                        <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" stroke="#9999FF" stroke-width="1.5" stroke-opacity="0.8"/>
+                        <text x="16" y="21.5" font-family="'Gilroy', 'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="15" fill="#9999FF" text-anchor="middle">Ae</text>
+                      </svg>
+                      <span>Adobe After Effects</span>
+                    </div>
+
+                    <!-- ProtoPie -->
+                    <div class="tool-logo-badge">
+                      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="7" fill="#FF5200"/>
+                        <path d="M9 8H18C20.7614 8 23 10.2386 23 13C23 15.7614 20.7614 18 18 18H14V24H9V8Z" fill="white"/>
+                        <circle cx="14" cy="13" r="2.5" fill="#FF5200"/>
+                      </svg>
+                      <span>ProtoPie</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5. LANGUAGES -->
+              <div class="accordion-item is-collapsed scroll-reveal">
+                <button class="accordion-header collapsed" aria-expanded="false" type="button">
+                  <h3 class="about-heading-sync" style="margin: 0;">
+                    Languages
+                  </h3>
+                  <i class="fa-solid fa-plus accordion-icon accordion-chevron"></i>
+                </button>
+
+                <div class="accordion-body collapsed">
+                  <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px dashed var(--color-border-default);">
+                      <span style="font-size: 18px; font-weight: 600; color: var(--color-text-primary);">English</span>
+                      <span style="font-size: 14px; color: var(--color-brand-primary); font-weight: 600;">Basic</span>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                      <span style="font-size: 18px; font-weight: 600; color: var(--color-text-primary);">Korean</span>
+                      <span style="font-size: 14px; color: var(--color-brand-primary); font-weight: 600;">Basic</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER: Black Background #000000, Big 'Let's keep in touch' Title in #E3CAA6, 4 lines left, 3 lines right -->
+  <footer style="background-color: #000000; color: #FFFFFF; padding-top: var(--space-20); padding-bottom: var(--space-12);">
+    <div class="container-standard">
+      
+      <!-- Big 'Let's keep in touch' Title centered in footer with color #E3CAA6 (Increased by 2px to ~96px / 6rem) -->
+      <h2 class="type-display" style="font-size: clamp(3.625rem, 6.7vw, 6rem); font-weight: 700; text-align: center; color: #E3CAA6; margin-bottom: var(--space-20); letter-spacing: -0.02em; line-height: 1.08;">
+        Let's keep in touch
+      </h2>
+
+      <!-- Sub-content Grid: Left (4 lines) & Right (3 lines) -->
+      <div class="grid-system" style="align-items: flex-start; justify-content: space-between; row-gap: var(--space-8);">
+        
+        <!-- LEFT SIDE: 4 lines of content (col-6) -->
+        <div class="col-6 col-12-tablet">
+          <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+            <!-- Line 1: Ngoc Nguyen -->
+            <div class="type-h3" style="font-weight: 700; color: #FFFFFF; font-size: 16px; margin-bottom: var(--space-1);">Ngoc Nguyen</div>
+            
+            <!-- Line 2: nguyendaobaongoc110@gmail.com -->
+            <a href="mailto:nguyendaobaongoc110@gmail.com" class="type-body-default footer-link" style="color: #A0A0A0; text-decoration: none; font-size: 16px; font-weight: 400; transition: color var(--transition-fast);">
+              nguyendaobaongoc110@gmail.com
+            </a>
+            
+            <!-- Line 3: 090 842 0809 -->
+            <a href="tel:0908420809" class="type-body-default footer-link" style="color: #A0A0A0; text-decoration: none; font-size: 16px; font-weight: 400; transition: color var(--transition-fast);">
+              090 842 0809
+            </a>
+            
+            <!-- Line 4: Linkedin -->
+            <a href="https://www.linkedin.com/in/nguyen-ngoc-97a512222" target="_blank" rel="noopener noreferrer" class="type-body-default footer-link" style="color: #A0A0A0; text-decoration: none; font-size: 16px; font-weight: 400; transition: color var(--transition-fast);">
+              Linkedin
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE: 3 separate lines for Home, My projects, About me (col-6 perfectly balanced) -->
+        <div class="col-6 col-12-tablet" style="margin-left: auto; text-align: right;">
+          <div style="display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-end;">
+            <!-- Line 1: Home -->
+            <a href="#home" class="type-body-large footer-link" style="color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600; transition: color var(--transition-fast);">
+              Home
+            </a>
+            
+            <!-- Line 2: My projects -->
+            <a href="#projects" class="type-body-large footer-link" style="color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600; transition: color var(--transition-fast);">
+              My projects
+            </a>
+            
+            <!-- Line 3: About me -->
+            <a href="#about" class="type-body-large footer-link" style="color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600; transition: color var(--transition-fast);">
+              About me
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Copyright Bar -->
+      <div style="border-top: 1px solid #222222; margin-top: var(--space-16); padding-top: var(--space-6); text-align: center; color: #666666;">
+        <span class="type-caption" style="color: #666666; font-size: 13px;">© 2026 Ngoc Nguyen. All rights reserved.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Project Detail Image Lightbox Modal (Backdrop Blur & Case Study Viewer) -->
+  <div id="project-detail-modal" class="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Fanidol Case Study Detail">
+    <div class="project-modal-backdrop"></div>
+    <button class="project-modal-close" type="button" aria-label="Close modal">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="project-modal-content">
+      <img id="project-modal-img" src="assets/fanidol_detail.png?v=3.0" alt="Fanidol — K-pop Tap-to-Earn Game Platform Case Study" class="project-modal-img" />
+    </div>
+  </div>
+
+  <!-- Core JavaScript -->
+  <script src="app.js?v=9.4"></script>
+</body>
+</html>

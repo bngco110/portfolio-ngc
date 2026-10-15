@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Projects — Ngoc Nguyen | UI/UX Designer Portfolio</title>
+  <meta name="description" content="Danh sách đầy đủ tất cả các sản phẩm thiết kế UI/UX của Ngoc Nguyen — Web3, E-commerce, Telegram Mini-Apps & Mobile Apps." />
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Google Fonts: Plus Jakarta Sans (Gilroy Fallback), Fredoka (Logo) & Fira Code (Monospace) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Core Minimalist Web System Stylesheet -->
+  <link rel="stylesheet" href="index.css?v=9.4" />
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Custom View Detail Follower Cursor for Product Cards -->
+  <div id="view-more-cursor" class="view-more-cursor" aria-hidden="true">
+    <span>View Detail</span>
+  </div>
+
+  <!-- HEADER: Logo BNG on Left, Menu Tabs on Right -->
+  <header class="site-header" id="header">
+    <div class="container-standard header-container">
+      
+      <!-- Logo on the left: Only logo mark with 'BNG' -->
+      <a href="index.html#home" class="brand-logo" aria-label="BNG Home">
+        <span class="brand-mark">BNG</span>
+      </a>
+
+      <!-- Menu tab on the right: Home - My projects (active) - About me -->
+      <nav class="main-nav">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="projects.html" class="nav-link active">My projects</a>
+        <a href="index.html#about" class="nav-link">About me</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- MAIN SECTION: ALL PROJECTS LIST (2 Cards Per Row Grid) -->
+    <section class="section" style="background-color: #FFFFFF; padding-top: var(--space-16); padding-bottom: var(--space-20);">
+      <div class="container-standard">
+        
+        <!-- Back Link -->
+        <div class="scroll-reveal" style="margin-bottom: var(--space-6);">
+          <a href="index.html#projects" class="type-body-default" style="display: inline-flex; align-items: center; gap: 8px; color: var(--color-text-secondary); text-decoration: none; font-weight: 600; font-size: 15px; transition: color var(--transition-fast);">
+            <i class="fa-solid fa-arrow-left" style="font-size: 0.85em;"></i>
+            <span>Back to Home</span>
+          </a>
+        </div>
+
+        <!-- Page Header -->
+        <div class="section-header scroll-reveal" style="margin-bottom: var(--space-12);">
+          <span class="section-tag">Full Case Studies</span>
+          <h1 class="type-h1 section-title" style="font-size: 48px; margin-top: 8px; margin-bottom: 12px;">My Projects</h1>
+        </div>
+
+        <!-- 2-COLUMN PRODUCT CARDS GRID (1 hàng 2 product card) -->
+        <div class="projects-grid-2col">
+          
+          <!-- PRODUCT CARD 1: Fanidol -->
+          <article class="project-card-vertical project-card-interactive scroll-reveal" data-modal-image="assets/fanidol_detail.png?v=3.7" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/fanidol.png" alt="Fanidol — K-pop Tap-to-Earn Game Platform" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              Fanidol
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              A tap-to-earn game/mission platform for the K-pop community.
+            </p>
+          </article>
+
+          <!-- PRODUCT CARD 2: Ubello -->
+          <article class="project-card-vertical project-card-interactive scroll-reveal" data-modal-image="assets/ubello_detail.png?v=3.7" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/ubello.png" alt="Ubello — Non-custodial Web3 App" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              Ubello
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              Ubello is a non-custodial Web3 app for secure asset management and everyday payments.
+            </p>
+          </article>
+
+          <!-- PRODUCT CARD 3: KpopRoad Website -->
+          <article class="project-card-vertical project-card-interactive scroll-reveal" data-modal-image="assets/kpoproad_detail.png?v=3.7" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/kpoproad.png" alt="KpopRoad Website" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              KpopRoad Website
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              A Web3 platform for K-pop fans to collect NFTs, participate in voting, and connect directly with idols worldwide.
+            </p>
+          </article>
+
+          <!-- PRODUCT CARD 4: YourC -->
+          <article class="project-card-vertical project-card-interactive scroll-reveal" data-modal-image="assets/yourc_detail.png?v=3.7" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/yourc.png" alt="YourC Vietnam Travel App" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              YourC
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              YourC app will provide users with the necessary services and utilities at preferential prices when traveling in Vietnam.
+            </p>
+          </article>
+
+          <!-- PRODUCT CARD 5: Ado -->
+          <article class="project-card-vertical project-card-interactive scroll-reveal" data-modal-image="assets/ado_detail.png?v=4.0" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/ado.png" alt="Ado — Pet Adoption Platform" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              Ado
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              Ado is a platform that supports animal lovers in adopting abandoned or stray pets in Vietnam
+            </p>
+          </article>
+
+          <!-- PRODUCT CARD 6: Gretta -->
+          <article class="project-card-vertical project-card-interactive scroll-reveal" data-modal-image="assets/gretta.png" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/gretta.png" alt="Gretta — Modern Home Design &amp; Architecture" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              Gretta
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              A website specializing in modern home design solutions and architectural inspiration.
+            </p>
+          </article>
+
+          <!-- PRODUCT CARD 7: Recozy -->
+          <article class="project-card-vertical project-card-interactive scroll-reveal" data-modal-image="assets/recozy.png" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/recozy.png" alt="Recozy — Premium Home Decor &amp; Furniture" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              Recozy
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              A website offering wholesale and retail of premium home decor products.
+            </p>
+          </article>
+
+          <!-- PRODUCT CARD 8: Relex -->
+          <article class="project-card-vertical project-card-interactive scroll-reveal" data-modal-image="assets/relex.png" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/relex.png" alt="Relex — Luxury Watches Platform" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              Relex
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              A platform that distributes renowned watch brands and provides the latest news and updates about the watch industry.
+            </p>
+          </article>
+
+          <!-- PRODUCT CARD 9: Radiant Skincare -->
+          <article class="project-card-vertical project-card-interactive scroll-reveal" data-modal-image="assets/radiant_skincare.png" style="cursor: pointer;">
+            <div class="project-card-vertical-thumb">
+              <img src="assets/radiant_skincare.png" alt="Radiant Skincare — Gentle Skincare &amp; Expert Beauty Tips" />
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              Radiant Skincare
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              A website offering gentle skincare products and sharing expert tips and blogs on skin care.
+            </p>
+          </article>
+
+          <!-- PRODUCT CARD 10: THEROWD (Coming Soon — Non-hoverable) -->
+          <article class="project-card-vertical scroll-reveal project-card-coming-soon">
+            <div class="project-card-vertical-thumb" style="position: relative;">
+              <img src="assets/therowd.png" alt="THEROWD — Web3 Investment Platform" />
+              <span class="card-badge-coming-soon">Coming Soon</span>
+            </div>
+            <h3 class="type-h3" style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); margin-top: 16px; margin-bottom: 8px;">
+              THEROWD
+            </h3>
+            <p class="type-body-default" style="font-size: 16px; color: var(--color-text-secondary); margin: 0; line-height: 1.6;">
+              A platform that leverages blockchain technology to connect investors with promising projects and fundraising opportunities.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER: Black Background #000000, Big 'Let's keep in touch' Title in #E3CAA6 -->
+  <footer style="background-color: #000000; color: #FFFFFF; padding-top: var(--space-20); padding-bottom: var(--space-12);">
+    <div class="container-standard">
+      
+      <!-- Big 'Let's keep in touch' Title centered in footer with color #E3CAA6 (Increased by 2px to ~96px / 6rem) -->
+      <h2 class="type-display" style="font-size: clamp(3.625rem, 6.7vw, 6rem); font-weight: 700; text-align: center; color: #E3CAA6; margin-bottom: var(--space-20); letter-spacing: -0.02em; line-height: 1.08;">
+        Let's keep in touch
+      </h2>
+
+      <!-- Sub-content Grid: Left (4 lines) & Right (3 lines) -->
+      <div class="grid-system" style="align-items: flex-start; justify-content: space-between; row-gap: var(--space-8);">
+        
+        <!-- LEFT SIDE: 4 lines of content (col-6) -->
+        <div class="col-6 col-12-tablet">
+          <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+            <!-- Line 1: Ngoc Nguyen -->
+            <div class="type-h3" style="font-weight: 700; color: #FFFFFF; font-size: 16px; margin-bottom: var(--space-1);">Ngoc Nguyen</div>
+            
+            <!-- Line 2: nguyendaobaongoc110@gmail.com -->
+            <a href="mailto:nguyendaobaongoc110@gmail.com" class="type-body-default footer-link" style="color: #A0A0A0; text-decoration: none; font-size: 16px; font-weight: 400; transition: color var(--transition-fast);">
+              nguyendaobaongoc110@gmail.com
+            </a>
+            
+            <!-- Line 3: 090 842 0809 -->
+            <a href="tel:0908420809" class="type-body-default footer-link" style="color: #A0A0A0; text-decoration: none; font-size: 16px; font-weight: 400; transition: color var(--transition-fast);">
+              090 842 0809
+            </a>
+            
+            <!-- Line 4: Linkedin -->
+            <a href="https://www.linkedin.com/in/nguyen-ngoc-97a512222" target="_blank" rel="noopener noreferrer" class="type-body-default footer-link" style="color: #A0A0A0; text-decoration: none; font-size: 16px; font-weight: 400; transition: color var(--transition-fast);">
+              Linkedin
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE: 3 separate lines for Home, My projects, About me -->
+        <div class="col-6 col-12-tablet" style="margin-left: auto; text-align: right;">
+          <div style="display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-end;">
+            <!-- Line 1: Home -->
+            <a href="index.html#home" class="type-body-large footer-link" style="color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600; transition: color var(--transition-fast);">
+              Home
+            </a>
+            
+            <!-- Line 2: My projects -->
+            <a href="index.html#projects" class="type-body-large footer-link" style="color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600; transition: color var(--transition-fast);">
+              My projects
+            </a>
+            
+            <!-- Line 3: About me -->
+            <a href="index.html#about" class="type-body-large footer-link" style="color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600; transition: color var(--transition-fast);">
+              About me
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Copyright Bar -->
+      <div style="border-top: 1px solid #222222; margin-top: var(--space-16); padding-top: var(--space-6); text-align: center; color: #666666;">
+        <span class="type-caption" style="color: #666666; font-size: 13px;">© 2026 Ngoc Nguyen. All rights reserved.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Project Detail Image Lightbox Modal (Backdrop Blur & Case Study Viewer) -->
+  <div id="project-detail-modal" class="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project Case Study Detail">
+    <div class="project-modal-backdrop"></div>
+    <button class="project-modal-close" type="button" aria-label="Close modal">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="project-modal-content">
+      <img id="project-modal-img" src="assets/fanidol_detail.png?v=3.7" alt="Project Case Study Detail" class="project-modal-img" />
+    </div>
+  </div>
+
+  <!-- Core JavaScript -->
+  <script src="app.js?v=9.4"></script>
+</body>
+</html>
