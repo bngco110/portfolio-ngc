@@ -300,7 +300,10 @@ function initApp() {
         header.setAttribute('aria-expanded', 'false');
         header.classList.add('collapsed');
         if (body) body.classList.add('collapsed');
-        if (parentItem) parentItem.classList.add('is-collapsed');
+        if (parentItem) {
+          parentItem.classList.add('is-collapsed');
+          parentItem.classList.remove('is-expanded');
+        }
         if (icon) {
           icon.classList.remove('fa-minus');
           icon.classList.add('fa-plus');
@@ -310,11 +313,27 @@ function initApp() {
         header.setAttribute('aria-expanded', 'true');
         header.classList.remove('collapsed');
         if (body) body.classList.remove('collapsed');
-        if (parentItem) parentItem.classList.remove('is-collapsed');
+        if (parentItem) {
+          parentItem.classList.remove('is-collapsed');
+          parentItem.classList.add('is-expanded');
+        }
         if (icon) {
           icon.classList.remove('fa-plus');
           icon.classList.add('fa-minus');
         }
+      }
+    });
+  });
+
+  // Allow clicking anywhere on accordion item row (including the line) to toggle
+  const accordionItems = document.querySelectorAll('.accordion-item');
+  accordionItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      const body = item.querySelector('.accordion-body');
+      if (body && body.contains(e.target)) return;
+      const header = item.querySelector('.accordion-header');
+      if (header && !header.contains(e.target)) {
+        header.click();
       }
     });
   });

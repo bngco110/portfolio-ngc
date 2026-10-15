@@ -1602,24 +1602,35 @@ select.form-input {
   transition: padding-bottom 0.25s ease;
 }
 
-/* Animated Primary Color Underline Running Left to Right on Hover (Gentle Paced 0.65s) */
+/* Animated Primary Color Underline Running Left to Right on Hover, Tap/Active & When Expanded */
 .accordion-item::after {
   content: '';
   position: absolute;
   bottom: -1px;
   left: 0;
   width: 100%;
-  height: 1.5px;
+  height: 2px;
   background-color: var(--color-brand-primary, #E3CAA6);
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
   pointer-events: none;
   z-index: 2;
 }
 
-.accordion-item:hover::after {
-  transform: scaleX(1);
+.accordion-item:hover::after,
+.accordion-item:active::after,
+.accordion-item.is-expanded::after,
+.accordion-item:not(.is-collapsed)::after,
+.accordion-item:has(.accordion-header:not(.collapsed))::after,
+.accordion-item:has(.accordion-header[aria-expanded="true"])::after {
+  transform: scaleX(1) !important;
+  background-color: var(--color-brand-primary, #E3CAA6) !important;
+}
+
+.accordion-item.is-expanded,
+.accordion-item:not(.is-collapsed) {
+  border-bottom-color: var(--color-brand-primary, #E3CAA6) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1637,6 +1648,15 @@ select.form-input {
   justify-content: center;
   padding-top: 0;
   padding-bottom: 0;
+  cursor: pointer;
+}
+
+.accordion-item.is-collapsed .accordion-header {
+  height: 100%;
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .accordion-item:not(.is-collapsed) {
@@ -2160,16 +2180,44 @@ h3.about-heading-sync {
   transition: color 0.25s ease;
 }
 
-/* Category Titles (Experience, Education, Courses, Tools, Languages) turn to Primary Color when clicked / expanded */
+/* Category Titles (Experience, Education, Courses, Tools, Languages) turn to Primary Color when clicked / expanded / hovered / tapped */
+.accordion-header:hover .about-heading-sync,
+.accordion-header:active .about-heading-sync,
+.accordion-item:hover .about-heading-sync,
+.accordion-item:active .about-heading-sync,
 .accordion-header:not(.collapsed) .about-heading-sync,
 .accordion-header[aria-expanded="true"] .about-heading-sync,
-.accordion-item:not(.is-collapsed) .about-heading-sync {
+.accordion-item:not(.is-collapsed) .about-heading-sync,
+.accordion-item.is-expanded .about-heading-sync {
   color: var(--color-brand-primary, #E3CAA6) !important;
 }
 
+.accordion-header:hover .accordion-icon,
+.accordion-header:hover .accordion-chevron,
+.accordion-header:active .accordion-icon,
+.accordion-header:active .accordion-chevron,
+.accordion-item:hover .accordion-icon,
+.accordion-item:hover .accordion-chevron,
+.accordion-item:active .accordion-icon,
+.accordion-item:active .accordion-chevron,
 .accordion-header:not(.collapsed) .accordion-icon,
-.accordion-header:not(.collapsed) .accordion-chevron {
-  color: var(--color-brand-primary, #E3CAA6);
+.accordion-header:not(.collapsed) .accordion-chevron,
+.accordion-item:not(.is-collapsed) .accordion-icon,
+.accordion-item:not(.is-collapsed) .accordion-chevron,
+.accordion-item.is-expanded .accordion-icon,
+.accordion-item.is-expanded .accordion-chevron {
+  color: var(--color-brand-primary, #E3CAA6) !important;
+}
+
+/* About Section Profile Links Hover & Active Color */
+.about-profile-group a:hover,
+.about-profile-group a:active {
+  color: var(--color-brand-primary, #E3CAA6) !important;
+}
+
+.about-profile-group a:hover i,
+.about-profile-group a:active i {
+  color: var(--color-brand-primary, #E3CAA6) !important;
 }
 
 /* ==========================================================================
