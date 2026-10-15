@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Core Minimalist Web System Stylesheet -->
-  <link rel="stylesheet" href="index.css?v=9.6" />
+  <link rel="stylesheet" href="index.css?v=9.7" />
 </head>
 <body>
 
@@ -36,15 +36,43 @@
         <span class="brand-mark">BNG</span>
       </a>
 
-      <!-- Menu tab on the right: Home - My projects - About me -->
+      <!-- Menu tab on the right: Home - My projects - About me (Desktop) -->
       <nav class="main-nav">
         <a href="#home" class="nav-link active">Home</a>
         <a href="#projects" class="nav-link">My projects</a>
         <a href="#about" class="nav-link">About me</a>
       </nav>
 
+      <!-- Mobile Hamburger Menu Button (Mobile only) -->
+      <button class="hamburger-btn" id="hamburgerBtn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer Dropdown (Mobile only) -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <nav class="mobile-nav-menu">
+        <a href="#home" class="mobile-nav-link active">
+          <span>Home</span>
+          <i class="fa-solid fa-arrow-right-long mobile-nav-arrow"></i>
+        </a>
+        <a href="#projects" class="mobile-nav-link">
+          <span>My projects</span>
+          <i class="fa-solid fa-arrow-right-long mobile-nav-arrow"></i>
+        </a>
+        <a href="#about" class="mobile-nav-link">
+          <span>About me</span>
+          <i class="fa-solid fa-arrow-right-long mobile-nav-arrow"></i>
+        </a>
+      </nav>
     </div>
   </header>
+
+  <!-- Mobile Menu Backdrop -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 
   <main>
     <!-- HERO SECTION: Background #FAFAFA, refined compact typography & image -->
@@ -653,6 +681,6 @@
   </div>
 
   <!-- Core JavaScript -->
-  <script src="app.js?v=9.6"></script>
+  <script src="app.js?v=9.7"></script>
 </body>
 </html>

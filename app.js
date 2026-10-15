@@ -114,7 +114,7 @@ function initApp() {
      3. Header Glassmorphism on Scroll & Active ScrollSpy Navigation
      ------------------------------------------------------------------------ */
   const header = document.getElementById('header') || document.querySelector('.site-header');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
   const sections = document.querySelectorAll('section[id]');
 
   function handleScroll() {
@@ -149,6 +149,86 @@ function initApp() {
     // Hero Avatar Physical Dimension Expansion on Scroll
     updateHeroAvatarSize();
   }
+
+  /* ------------------------------------------------------------------------
+     3a. Mobile Hamburger Menu & Drawer Toggle
+     Replaces 3 header navigation texts with an animated hamburger button on
+     mobile. Tapping opens a sleek slide-down drawer with Home, My projects,
+     and About me.
+     ------------------------------------------------------------------------ */
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+  const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  function openMobileNav() {
+    if (!hamburgerBtn || !mobileNavDrawer) return;
+    hamburgerBtn.classList.add('is-active');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    mobileNavDrawer.classList.add('is-open');
+    mobileNavDrawer.setAttribute('aria-hidden', 'false');
+    if (mobileNavBackdrop) {
+      mobileNavBackdrop.classList.add('is-open');
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileNav() {
+    if (!hamburgerBtn || !mobileNavDrawer) return;
+    hamburgerBtn.classList.remove('is-active');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    mobileNavDrawer.classList.remove('is-open');
+    mobileNavDrawer.setAttribute('aria-hidden', 'true');
+    if (mobileNavBackdrop) {
+      mobileNavBackdrop.classList.remove('is-open');
+    }
+    // Only clear overflow if project detail modal isn't open
+    const modal = document.getElementById('project-detail-modal');
+    if (!modal || !modal.classList.contains('is-active')) {
+      document.body.style.overflow = '';
+    }
+  }
+
+  function toggleMobileNav() {
+    if (!mobileNavDrawer) return;
+    const isOpen = mobileNavDrawer.classList.contains('is-open');
+    if (isOpen) {
+      closeMobileNav();
+    } else {
+      openMobileNav();
+    }
+  }
+
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileNav();
+    });
+  }
+
+  if (mobileNavBackdrop) {
+    mobileNavBackdrop.addEventListener('click', () => {
+      closeMobileNav();
+    });
+  }
+
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeMobileNav();
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileNavDrawer && mobileNavDrawer.classList.contains('is-open')) {
+      closeMobileNav();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768 && mobileNavDrawer && mobileNavDrawer.classList.contains('is-open')) {
+      closeMobileNav();
+    }
+  }, { passive: true });
 
   /* ------------------------------------------------------------------------
      3b. Hero Avatar Physical Size Expansion on Scroll
