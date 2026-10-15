@@ -2437,7 +2437,7 @@ h3.about-heading-sync {
   display: block;
   border-radius: 14px;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.12);
-  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
 }
 
 @media (max-width: 900px) {
