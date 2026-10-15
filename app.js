@@ -296,7 +296,7 @@ function initApp() {
     const heroHeight = getHeroHeight();
     const progress = Math.min(Math.max(scrollY / heroHeight, 0), 1);
 
-    // Expand width from 400px up to 520px (proportionally scaling 16:9 height)
+    // Expand width from 400px up to 520px (proportionally scaling 4:3 height)
     const parentWidth = heroAvatarFrame.parentElement ? heroAvatarFrame.parentElement.offsetWidth : 520;
     const maxTarget = Math.min(520, parentWidth);
     const minTarget = Math.min(400, maxTarget * 0.77);

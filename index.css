@@ -2430,7 +2430,7 @@ h3.about-heading-sync {
 .hero-avatar-frame {
   width: 400px;
   max-width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: var(--radius-sm);
   margin-bottom: var(--space-4);
