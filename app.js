@@ -231,7 +231,32 @@ function initApp() {
   }, { passive: true });
 
   /* ------------------------------------------------------------------------
-     3b. Hero Avatar Physical Size Expansion on Scroll
+     3b. Header Brand Logo & Home Link Smooth Scroll to Hero (Negative Space View)
+     When clicking the BNG brand logo or Home nav link, smoothly scroll to top: 0
+     so only the hero section with its negative space fills the viewport.
+     ------------------------------------------------------------------------ */
+  const homeTriggers = document.querySelectorAll('.brand-logo, a[href="#home"], a[href="index.html#home"]');
+  homeTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      const isIndexPage = window.location.pathname.endsWith('index.html') ||
+                          window.location.pathname === '/' ||
+                          !window.location.pathname.includes('.html');
+      if (isIndexPage) {
+        e.preventDefault();
+        closeMobileNav();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        if (history.pushState) {
+          history.pushState(null, null, '#home');
+        }
+      }
+    });
+  });
+
+  /* ------------------------------------------------------------------------
+     3c. Hero Avatar Physical Size Expansion on Scroll
      As user scrolls down through the hero section, the physical dimensions
      of the photo frame gradually enlarge (from 400px to 520px) WITHOUT
      cropping or zooming into the image. Text 'Ngoc Nguyen' (56px) and right

@@ -867,11 +867,19 @@ select.form-input {
    6. HERO & EDITORIAL SECTIONS
    ========================================================================== */
 .hero-section {
-  padding-top: 72px;
-  padding-bottom: 88px;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  box-sizing: border-box;
   border-bottom: none;
   background-color: #FAFAFA;
   overflow: hidden;
+}
+
+.hero-section > .container-standard {
+  width: 100%;
 }
 
 .hero-grid {
@@ -947,6 +955,10 @@ select.form-input {
 
 @media (max-width: 991px) {
   .hero-section {
+    min-height: calc(100vh - 70px);
+    min-height: calc(100dvh - 70px);
+    display: flex;
+    align-items: center;
     padding-top: 48px;
     padding-bottom: 56px;
   }
@@ -978,8 +990,12 @@ select.form-input {
 
 @media (max-width: 576px) {
   .hero-section {
-    padding-top: 32px;
-    padding-bottom: 44px;
+    min-height: calc(100vh - 64px);
+    min-height: calc(100dvh - 64px);
+    display: flex;
+    align-items: center;
+    padding-top: 36px;
+    padding-bottom: 48px;
   }
   .hero-grid {
     row-gap: 28px;
