@@ -110,6 +110,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-surface-canvas);
   color: var(--color-text-primary);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -118,6 +120,10 @@ body {
   color: var(--color-text-primary);
   line-height: 1.5;
   overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 button, input, select, textarea, a {
@@ -314,9 +320,23 @@ button, input, select, textarea, a {
 }
 
 @media (max-width: 767px) {
-  .col-12-mobile { grid-column: span 4; }
-  .col-6-mobile  { grid-column: span 4; }
-  .col-2-mobile  { grid-column: span 2; }
+  .col-12,
+  .col-10,
+  .col-8,
+  .col-6,
+  .col-4,
+  .col-3,
+  .col-12-tablet,
+  .col-8-tablet,
+  .col-6-tablet,
+  .col-4-tablet,
+  .col-12-mobile,
+  .col-6-mobile {
+    grid-column: span 4 !important;
+  }
+  .col-2-mobile {
+    grid-column: span 2 !important;
+  }
 }
 
 /* Visual Grid Overlay Line Helper */
@@ -774,10 +794,17 @@ select.form-input {
    6. HERO & EDITORIAL SECTIONS
    ========================================================================== */
 .hero-section {
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-20);
+  padding-top: 72px;
+  padding-bottom: 88px;
   border-bottom: none;
   background-color: #FAFAFA;
+  overflow: hidden;
+}
+
+.hero-grid {
+  align-items: flex-start;
+  column-gap: 90px;
+  row-gap: var(--space-8);
 }
 
 /* Editorial Reference Hero Layout (Height Offset & Wide Gap) */
@@ -785,9 +812,120 @@ select.form-input {
   margin-top: 140px;
 }
 
+.hero-left-wrap {
+  width: 100%;
+  max-width: 520px;
+}
+
+.hero-display-title {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  margin: 0;
+}
+
+.hero-editorial-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px;
+}
+
+.hero-right-wrap {
+  width: 100%;
+  max-width: 520px;
+  margin-left: auto;
+}
+
+.hero-hello-title {
+  font-size: 38px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-top: 0;
+  margin-bottom: 12px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.hero-bio-p {
+  font-size: 14.5px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.hero-cv-btn-wrap {
+  margin-top: var(--space-6);
+  text-align: right;
+}
+
+.hero-cv-btn {
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 9px 18px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 @media (max-width: 991px) {
+  .hero-section {
+    padding-top: 48px;
+    padding-bottom: 56px;
+  }
+  .hero-grid {
+    column-gap: 0 !important;
+    row-gap: 36px;
+  }
   .hero-editorial-left {
-    margin-top: var(--space-4);
+    margin-top: 0 !important;
+  }
+  .hero-left-wrap,
+  .hero-right-wrap {
+    max-width: 100%;
+    margin-left: 0 !important;
+  }
+  .hero-display-title {
+    font-size: clamp(32px, 8vw, 44px);
+    white-space: nowrap;
+  }
+  .hero-editorial-right {
+    min-height: auto !important;
+    justify-content: flex-start;
+  }
+  .hero-cv-btn-wrap {
+    margin-top: 24px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    padding-top: 32px;
+    padding-bottom: 44px;
+  }
+  .hero-grid {
+    row-gap: 28px;
+  }
+  .hero-avatar-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .hero-display-title {
+    font-size: clamp(28px, 8.5vw, 36px);
+    white-space: nowrap;
+  }
+  .hero-hello-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .hero-bio-p {
+    font-size: 14px;
+    line-height: 1.6;
   }
 }
 
@@ -1152,10 +1290,16 @@ select.form-input {
     line-height: 1.2;
   }
   .header-container {
-    height: 70px;
+    height: 64px;
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
   }
   .main-nav {
-    display: none; /* Mobile menu handles this */
+    display: flex;
+    gap: 16px;
+  }
+  .nav-link {
+    font-size: 13.5px;
   }
 }
 

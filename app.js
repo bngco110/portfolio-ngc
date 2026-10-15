@@ -176,6 +176,12 @@ function initApp() {
   function updateHeroAvatarSize() {
     if (!heroAvatarFrame || !heroSection || prefersReducedMotion) return;
 
+    // On mobile devices (<= 767px), maintain full responsive width without fixed pixel forcing
+    if (window.innerWidth <= 767) {
+      heroAvatarFrame.style.width = '100%';
+      return;
+    }
+
     // Ensure inner image is never cropped or zoomed
     if (heroAvatarImg && heroAvatarImg.style.transform) {
       heroAvatarImg.style.transform = '';
@@ -246,8 +252,8 @@ function initApp() {
         }
       });
     }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.02,
+      rootMargin: '0px 0px 60px 0px'
     });
 
     revealElements.forEach(el => observer.observe(el));

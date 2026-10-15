@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Core Minimalist Web System Stylesheet -->
-  <link rel="stylesheet" href="index.css?v=9.4" />
+  <link rel="stylesheet" href="index.css?v=9.6" />
 </head>
 <body>
 
@@ -48,48 +48,48 @@
 
   <main>
     <!-- HERO SECTION: Background #FAFAFA, refined compact typography & image -->
-    <section id="home" class="hero-section" style="padding-top: 72px; padding-bottom: 88px; background-color: #FAFAFA; border-bottom: none;">
+    <section id="home" class="hero-section">
       <div class="container-standard">
         
-        <!-- Hero Grid with 2 sides, column gap 90px -->
-        <div class="grid-system" style="align-items: flex-start; column-gap: 90px; row-gap: var(--space-8);">
+        <!-- Hero Grid with 2 sides -->
+        <div class="grid-system hero-grid">
           
-          <!-- LEFT SIDE: 16:9 Image (refined compact size) & Title 'Ngoc Nguyen' (56px, 1 single line) -->
-          <div class="col-6 col-12-tablet hero-editorial-left hero-animate-left">
-            <div style="width: 100%; max-width: 520px;">
-              <!-- 16:9 Aspect Ratio Profile Photo (Physical dimensions enlarge as you scroll down) -->
-              <div class="hero-avatar-frame" style="width: 400px; max-width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--radius-sm); margin-bottom: var(--space-4); background-color: #FFFFFF;">
-                <img id="hero-avatar-img" class="hero-avatar-img" src="assets/hero_avatar.jpg?v=3.8" alt="Ngoc Nguyen — UI/UX Designer" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;" />
+          <!-- LEFT SIDE: 16:9 Image & Title 'Ngoc Nguyen' -->
+          <div class="col-6 col-12-tablet col-12-mobile hero-editorial-left hero-animate-left">
+            <div class="hero-left-wrap">
+              <!-- 16:9 Aspect Ratio Profile Photo -->
+              <div class="hero-avatar-frame">
+                <img id="hero-avatar-img" class="hero-avatar-img" src="assets/hero_avatar.jpg?v=3.8" alt="Ngoc Nguyen — UI/UX Designer" />
               </div>
-              <!-- Title Ngoc Nguyen: 56px, Font Weight 600, 1 Single Line -->
-              <h1 class="type-display" style="font-size: 56px; font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; color: var(--color-text-primary); white-space: nowrap;">
+              <!-- Title Ngoc Nguyen: responsive fluid clamp on mobile, 56px on desktop -->
+              <h1 class="type-display hero-display-title">
                 Ngoc Nguyen
               </h1>
             </div>
           </div>
 
-          <!-- RIGHT SIDE: Title 'Hello' 38px & Compact Bio Body Text 14.5px -->
-          <div class="col-6 col-12-tablet hero-animate-right" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 350px;">
-            <div style="width: 100%; max-width: 520px; margin-left: auto;">
-              <!-- Title: Hello (38px, thinner weight, SAME COLOR #000000 as Ngoc Nguyen) -->
-              <h2 class="type-h1" style="font-size: 38px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 12px; line-height: 1.15; letter-spacing: -0.015em;">
+          <!-- RIGHT SIDE: Title 'Hello' & Bio Body Text & Download CV Button -->
+          <div class="col-6 col-12-tablet col-12-mobile hero-editorial-right hero-animate-right">
+            <div class="hero-right-wrap">
+              <!-- Title: Hello -->
+              <h2 class="type-h1 hero-hello-title">
                 Hello
               </h2>
 
-              <!-- Bio Paragraph 1: 14.5px -->
-              <p class="type-body-default" style="font-size: 14.5px; margin-bottom: 10px; line-height: 1.6; color: var(--color-text-secondary);">
+              <!-- Bio Paragraph 1 -->
+              <p class="type-body-default hero-bio-p">
                 My name is Ngoc and I’m a UI/UX Designer with nearly 3 years of experience, driven by a user centered mindset. With a high level of adaptability, focus and accountability, I focus on creating intuitive, well crafted designs that not only look refined but also solve real user problems.
               </p>
 
-              <!-- Bio Paragraph 2: 14.5px -->
-              <p class="type-body-default" style="font-size: 14.5px; margin-bottom: 0; line-height: 1.6; color: var(--color-text-secondary);">
+              <!-- Bio Paragraph 2 -->
+              <p class="type-body-default hero-bio-p" style="margin-bottom: 0;">
                 My skills include UI design, UX research and a versatile set of supporting technical skills. I have experience working on E-commerce platforms in Fashion, Cosmetics and Pharmaceutical fields, as well as Recruitment platforms, Web3 Crypto Commerce apps, and Telegram mini game apps.
               </p>
             </div>
 
-            <!-- Bottom Right Download CV CTA Button -->
-            <div style="margin-top: var(--space-6); text-align: right;">
-              <a href="#" download onclick="alert('Downloading Ngoc Nguyen UI/UX Designer CV...'); return false;" class="btn btn-primary" style="font-size: 13.5px; font-weight: 600; padding: 9px 18px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+            <!-- Bottom Download CV CTA Button -->
+            <div class="hero-cv-btn-wrap">
+              <a href="#" download onclick="alert('Downloading Ngoc Nguyen UI/UX Designer CV...'); return false;" class="btn btn-primary hero-cv-btn">
                 <span>Download CV</span>
                 <i class="fa-solid fa-arrow-down" style="font-size: 0.85em;"></i>
               </a>
@@ -653,6 +653,6 @@
   </div>
 
   <!-- Core JavaScript -->
-  <script src="app.js?v=9.4"></script>
+  <script src="app.js?v=9.6"></script>
 </body>
 </html>
