@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Core Minimalist Web System Stylesheet -->
-  <link rel="stylesheet" href="index.css?v=9.7" />
+  <link rel="stylesheet" href="index.css?v=9.8" />
 </head>
 <body>
 
@@ -234,20 +234,21 @@
   </main>
 
   <!-- FOOTER: Black Background #000000, Big 'Let's keep in touch' Title in #E3CAA6 -->
-  <footer style="background-color: #000000; color: #FFFFFF; padding-top: var(--space-20); padding-bottom: var(--space-12);">
+  <footer id="footer" style="background-color: #000000; color: #FFFFFF; padding-top: var(--space-20); padding-bottom: var(--space-12);">
     <div class="container-standard">
       
-      <!-- Big 'Let's keep in touch' Title centered in footer with color #E3CAA6 (Increased by 2px to ~96px / 6rem) -->
-      <h2 class="type-display" style="font-size: clamp(3.625rem, 6.7vw, 6rem); font-weight: 700; text-align: center; color: #E3CAA6; margin-bottom: var(--space-20); letter-spacing: -0.02em; line-height: 1.08;">
+      <!-- Big 'Let's keep in touch' Title centered in footer with color #E3CAA6 -->
+      <h2 class="type-display footer-touch-title">
         Let's keep in touch
       </h2>
 
-      <!-- Sub-content Grid: Left (4 lines) & Right (3 lines) -->
-      <div class="grid-system" style="align-items: flex-start; justify-content: space-between; row-gap: var(--space-8);">
+      <!-- Sub-content Grid: Left (Contacts) & Right (Nav Links) -->
+      <div class="grid-system footer-content-grid" style="align-items: flex-start; justify-content: space-between; row-gap: var(--space-8);">
         
-        <!-- LEFT SIDE: 4 lines of content (col-6) -->
-        <div class="col-6 col-12-tablet">
-          <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+        <!-- LEFT SIDE: Contacts (Desktop text list / Mobile horizontal icon row) -->
+        <div class="col-6 col-12-tablet footer-left-col">
+          <!-- Desktop Text Contacts (Hidden on mobile) -->
+          <div class="footer-contacts-desktop">
             <!-- Line 1: Ngoc Nguyen -->
             <div class="type-h3" style="font-weight: 700; color: #FFFFFF; font-size: 16px; margin-bottom: var(--space-1);">Ngoc Nguyen</div>
             
@@ -266,32 +267,40 @@
               Linkedin
             </a>
           </div>
-        </div>
 
-        <!-- RIGHT SIDE: 3 separate lines for Home, My projects, About me -->
-        <div class="col-6 col-12-tablet" style="margin-left: auto; text-align: right;">
-          <div style="display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-end;">
-            <!-- Line 1: Home -->
-            <a href="index.html#home" class="type-body-large footer-link" style="color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600; transition: color var(--transition-fast);">
-              Home
+          <!-- Mobile Icon Contacts (Horizontal Row - Hidden on desktop) -->
+          <div class="footer-contacts-mobile">
+            <a href="tel:0908420809" class="footer-icon-btn" aria-label="Phone: 090 842 0809">
+              <i class="fa-solid fa-phone"></i>
             </a>
-            
-            <!-- Line 2: My projects -->
-            <a href="index.html#projects" class="type-body-large footer-link" style="color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600; transition: color var(--transition-fast);">
-              My projects
+            <a href="mailto:nguyendaobaongoc110@gmail.com" class="footer-icon-btn" aria-label="Email: nguyendaobaongoc110@gmail.com">
+              <i class="fa-solid fa-envelope"></i>
             </a>
-            
-            <!-- Line 3: About me -->
-            <a href="index.html#about" class="type-body-large footer-link" style="color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600; transition: color var(--transition-fast);">
-              About me
+            <a href="https://www.linkedin.com/in/nguyen-ngoc-97a512222" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
             </a>
           </div>
+        </div>
+
+        <!-- RIGHT SIDE: 3 separate lines for Home, My projects, About me (Desktop column / Mobile horizontal row) -->
+        <div class="col-6 col-12-tablet footer-right-col" style="margin-left: auto; text-align: right;">
+          <nav class="footer-nav-links">
+            <a href="index.html#home" class="type-body-large footer-link footer-nav-link">
+              Home
+            </a>
+            <a href="projects.html" class="type-body-large footer-link footer-nav-link">
+              My projects
+            </a>
+            <a href="index.html#about" class="type-body-large footer-link footer-nav-link">
+              About me
+            </a>
+          </nav>
         </div>
 
       </div>
 
       <!-- Footer Bottom Copyright Bar -->
-      <div style="border-top: 1px solid #222222; margin-top: var(--space-16); padding-top: var(--space-6); text-align: center; color: #666666;">
+      <div class="footer-bottom-bar">
         <span class="type-caption" style="color: #666666; font-size: 13px;">© 2026 Ngoc Nguyen. All rights reserved.</span>
       </div>
 
@@ -310,6 +319,6 @@
   </div>
 
   <!-- Core JavaScript -->
-  <script src="app.js?v=9.7"></script>
+  <script src="app.js?v=9.8"></script>
 </body>
 </html>

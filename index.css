@@ -1783,6 +1783,136 @@ select.form-input {
   color: #FFFFFF !important;
 }
 
+/* ==========================================================================
+   FOOTER SECTION STYLES & MOBILE ADAPTATION
+   ========================================================================== */
+.footer-touch-title {
+  font-size: clamp(3.625rem, 6.7vw, 6rem);
+  font-weight: 700;
+  text-align: center;
+  color: #E3CAA6;
+  margin-bottom: var(--space-20);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+.footer-contacts-desktop {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-contacts-mobile {
+  display: none;
+}
+
+.footer-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
+  font-size: 17px;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.footer-icon-btn:hover,
+.footer-icon-btn:focus-visible {
+  background-color: var(--color-brand-primary, #E3CAA6);
+  color: #000000;
+  border-color: var(--color-brand-primary, #E3CAA6);
+  transform: translateY(-2px);
+}
+
+.footer-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-end;
+}
+
+.footer-nav-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.footer-nav-link:hover {
+  color: var(--color-brand-primary, #E3CAA6);
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid #222222;
+  margin-top: var(--space-16);
+  padding-top: var(--space-6);
+  text-align: center;
+  color: #666666;
+}
+
+@media (max-width: 767px) {
+  /* Increase "Let's keep in touch" by 2px on mobile */
+  .footer-touch-title {
+    font-size: clamp(calc(3.625rem + 2px), 9.5vw, calc(6rem + 2px)) !important;
+    margin-bottom: 28px !important;
+    line-height: 1.12 !important;
+  }
+
+  .footer-content-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    row-gap: 24px !important;
+  }
+
+  .footer-left-col,
+  .footer-right-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    text-align: center !important;
+  }
+
+  /* Hide the text labels (Ngoc Nguyen, sđt, gmail) on mobile */
+  .footer-contacts-desktop {
+    display: none !important;
+  }
+
+  /* Show contact icons arranged in a horizontal row on mobile */
+  .footer-contacts-mobile {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+  }
+
+  /* Text Home - My projects - About me also arranged in a horizontal row */
+  .footer-nav-links {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 22px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .footer-nav-link {
+    font-size: 15px !important;
+  }
+
+  .footer-bottom-bar {
+    margin-top: 32px !important;
+    padding-top: 20px !important;
+  }
+}
+
 /* Hero Section Motion Entrance Animations (Left: Bottom -> Top, Right: Top -> Bottom) */
 @keyframes heroRevealBottomToTop {
   0% {
