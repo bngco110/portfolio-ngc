@@ -463,17 +463,18 @@ function initApp() {
   }
 
   // Click on any interactive product card to view enlarged image / case study detail
-  const modalCards = document.querySelectorAll('.project-card-interactive');
-  modalCards.forEach(card => {
-    card.addEventListener('click', (e) => {
-      e.preventDefault();
-      const imgSrc = card.getAttribute('data-modal-image') || (card.querySelector('img') ? card.querySelector('img').src : null);
-      const titleEl = card.querySelector('h3');
-      const cardTitle = titleEl ? titleEl.textContent.trim() : 'Project';
-      if (imgSrc) {
-        openProjectModal(imgSrc, `${cardTitle} — Case Study Detail`);
-      }
-    });
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest('.project-card-interactive');
+    if (!card) return;
+    if (e.target.closest('.project-modal-close') || e.target.closest('.project-modal-content')) return;
+
+    e.preventDefault();
+    const imgSrc = card.getAttribute('data-modal-image') || (card.querySelector('img') ? card.querySelector('img').src : null);
+    const titleEl = card.querySelector('h3');
+    const cardTitle = titleEl ? titleEl.textContent.trim() : 'Project';
+    if (imgSrc) {
+      openProjectModal(imgSrc, `${cardTitle} — Case Study Detail`);
+    }
   });
 
   // Click on close button
