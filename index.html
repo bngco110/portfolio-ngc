@@ -48,7 +48,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Core Minimalist Web System Stylesheet -->
-  <link rel="stylesheet" href="index.css?v=10.7" />
+  <link rel="stylesheet" href="index.css?v=10.8" />
 </head>
 <body>
 
@@ -69,11 +69,15 @@
         <span class="brand-mark">BNG</span>
       </a>
 
-      <!-- Menu tab on the right: Home - My projects - About me (Desktop) -->
+      <!-- Menu tab on the right: Home - My projects - About me - Download CV (Desktop) -->
       <nav class="main-nav">
         <a href="#home" class="nav-link active">Home</a>
         <a href="#projects" class="nav-link">My projects</a>
         <a href="#about" class="nav-link">About me</a>
+        <a href="#" download onclick="alert('Downloading Ngoc Nguyen UI/UX Designer CV...'); return false;" class="btn btn-primary header-cv-btn">
+          <span>Download CV</span>
+          <i class="fa-solid fa-arrow-down" style="font-size: 0.85em;"></i>
+        </a>
       </nav>
 
       <!-- Mobile Hamburger Menu Button (Mobile only) -->
@@ -100,6 +104,12 @@
           <span>About me</span>
           <i class="fa-solid fa-arrow-right-long mobile-nav-arrow"></i>
         </a>
+        <div class="mobile-nav-cv-wrap">
+          <a href="#" download onclick="alert('Downloading Ngoc Nguyen UI/UX Designer CV...'); return false;" class="btn btn-primary mobile-nav-cv-btn">
+            <span>Download CV</span>
+            <i class="fa-solid fa-arrow-down" style="font-size: 0.85em;"></i>
+          </a>
+        </div>
       </nav>
     </div>
   </header>

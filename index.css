@@ -777,6 +777,48 @@ select.form-input {
   width: 100%;
 }
 
+/* Header CTA Download CV Button (Desktop) */
+.header-cv-btn {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm, 6px);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: var(--space-3);
+  white-space: nowrap;
+  line-height: 1.2;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.header-cv-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(227, 202, 166, 0.45);
+}
+
+/* Mobile Nav Drawer CTA Download CV */
+.mobile-nav-cv-wrap {
+  padding-top: 14px;
+  margin-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.mobile-nav-cv-btn {
+  width: 100%;
+  justify-content: center;
+  font-size: 14.5px;
+  font-weight: 600;
+  padding: 11px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
 /* ==========================================================================
    MOBILE HAMBURGER MENU & DRAWER NAVIGATION
    ========================================================================== */
