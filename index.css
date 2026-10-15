@@ -995,6 +995,45 @@ select.form-input {
   gap: 8px;
 }
 
+/* Hero Section "Scroll to see more" Cue */
+.hero-scroll-wrap {
+  margin-top: var(--space-6);
+  text-align: right;
+}
+
+.hero-scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family-gilroy);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.hero-scroll-cue i {
+  font-size: 15px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-scroll-cue:hover {
+  opacity: 0.65;
+}
+
+.hero-scroll-cue:hover i {
+  transform: translateY(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-cue i {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
 @media (max-width: 991px) {
   .hero-section {
     min-height: calc(100vh - 70px);
@@ -1024,7 +1063,8 @@ select.form-input {
     min-height: auto !important;
     justify-content: flex-start;
   }
-  .hero-cv-btn-wrap {
+  .hero-cv-btn-wrap,
+  .hero-scroll-wrap {
     margin-top: 24px;
     text-align: left;
   }
@@ -1096,6 +1136,7 @@ select.form-input {
   padding-top: var(--space-16);
   padding-bottom: var(--space-16);
   border-bottom: 1px solid var(--color-border-default);
+  scroll-margin-top: 72px;
 }
 
 #projects {
