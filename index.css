@@ -952,7 +952,7 @@ select.form-input {
     margin-left: 0 !important;
   }
   .hero-display-title {
-    font-size: clamp(32px, 8vw, 44px);
+    font-size: clamp(36px, 8vw, 48px);
     white-space: nowrap;
   }
   .hero-editorial-right {
@@ -978,7 +978,7 @@ select.form-input {
     max-width: 100% !important;
   }
   .hero-display-title {
-    font-size: clamp(28px, 8.5vw, 36px);
+    font-size: clamp(33px, 9vw, 42px);
     white-space: nowrap;
   }
   .hero-hello-title {
