@@ -1517,7 +1517,7 @@ select.form-input {
 .about-title,
 .projects-title {
   font-family: var(--font-family-gilroy);
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.01em;
