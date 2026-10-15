@@ -1997,6 +1997,15 @@ select.form-input {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
+/* Product Card 1: Remove outer line stroke per user request */
+#project-card-fanidol {
+  border: 1px solid transparent !important;
+}
+
+#project-card-fanidol:hover {
+  border-color: transparent !important;
+}
+
 .project-card-vertical-thumb {
   width: 100%;
   aspect-ratio: 16 / 9;

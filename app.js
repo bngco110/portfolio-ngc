@@ -337,6 +337,16 @@ function initApp() {
     });
 
     revealElements.forEach(el => observer.observe(el));
+
+    // Immediately reveal elements that are already within initial viewport
+    setTimeout(() => {
+      revealElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 50 && rect.bottom > 0) {
+          el.classList.add('is-revealed');
+        }
+      });
+    }, 100);
   } else {
     revealElements.forEach(el => el.classList.add('is-revealed'));
   }
