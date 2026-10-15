@@ -925,7 +925,7 @@ select.form-input {
 }
 
 .hero-grid {
-  align-items: flex-start;
+  align-items: stretch;
   column-gap: 90px;
   row-gap: var(--space-8);
 }
@@ -954,7 +954,7 @@ select.form-input {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 350px;
+  min-height: auto;
 }
 
 .hero-right-wrap {
@@ -999,6 +999,10 @@ select.form-input {
 .hero-scroll-wrap {
   margin-top: var(--space-6);
   text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 2px;
 }
 
 .hero-scroll-cue {
@@ -1067,6 +1071,8 @@ select.form-input {
   .hero-scroll-wrap {
     margin-top: 24px;
     text-align: left;
+    display: block;
+    padding-bottom: 0;
   }
 }
 
