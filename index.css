@@ -110,7 +110,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-surface-canvas);
   color: var(--color-text-primary);
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
 }
 
@@ -119,7 +119,7 @@ body {
   background-color: var(--color-surface-canvas);
   color: var(--color-text-primary);
   line-height: 1.5;
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -234,6 +234,7 @@ button, input, select, textarea, a {
 .container-max,
 .container-standard,
 .container-compact {
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -652,31 +653,41 @@ select.form-input {
 }
 
 /* ==========================================================================
-   5. NAVIGATION & SYSTEM HEADER
+   5. NAVIGATION & SYSTEM HEADER (Sticky Frosted Glass / Glassmorphism)
    ========================================================================== */
 .site-header {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
-  background-color: rgba(250, 250, 250, 0.95);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-border-default);
-  transition: background-color 0.35s ease, -webkit-backdrop-filter 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  background-color: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              -webkit-backdrop-filter 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              backdrop-filter 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
 }
 
 .site-header.is-scrolled {
-  background-color: rgba(250, 250, 250, 0.48);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  backdrop-filter: blur(28px) saturate(180%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+  background-color: rgba(255, 255, 255, 0.82);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  backdrop-filter: blur(24px) saturate(190%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
 }
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   height: 80px;
   transition: height 0.35s ease;
 }
@@ -2389,6 +2400,13 @@ h3.about-heading-sync {
   object-position: center;
   display: block;
   transform: none !important;
+}
+
+@media (max-width: 767px) {
+  .hero-avatar-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

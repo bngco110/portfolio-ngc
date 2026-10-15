@@ -120,7 +120,7 @@ function initApp() {
   function handleScroll() {
     // Header Frosted Glass Effect
     if (header) {
-      if (window.scrollY > 20) {
+      if (window.scrollY > 10) {
         header.classList.add('is-scrolled');
       } else {
         header.classList.remove('is-scrolled');
