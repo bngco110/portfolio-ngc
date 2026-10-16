@@ -914,8 +914,8 @@ select.form-input {
   max-height: 1200px;
   display: flex;
   align-items: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 120px;
+  padding-bottom: 120px;
   box-sizing: border-box;
   border-bottom: none;
   background-color: #FAFAFA;
