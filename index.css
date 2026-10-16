@@ -911,7 +911,7 @@ select.form-input {
 .hero-section {
   min-height: 100vh;
   min-height: 100dvh;
-  max-height: 1200px;
+  max-height: 1000px;
   display: flex;
   align-items: center;
   padding-top: 120px;
