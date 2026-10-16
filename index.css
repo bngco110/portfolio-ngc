@@ -909,11 +909,12 @@ select.form-input {
    6. HERO & EDITORIAL SECTIONS
    ========================================================================== */
 .hero-section {
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: calc(100vh - 81px);
+  min-height: calc(100dvh - 81px);
   max-height: 1000px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
   padding-top: 120px;
   padding-bottom: 120px;
   box-sizing: border-box;
@@ -923,23 +924,37 @@ select.form-input {
 }
 
 .hero-section > .container-standard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
 .hero-grid {
+  flex: 1;
+  display: grid;
   align-items: stretch;
+  height: 100%;
   column-gap: 90px;
   row-gap: var(--space-8);
 }
 
 /* Editorial Reference Hero Layout (Height Offset & Wide Gap) */
 .hero-editorial-left {
-  margin-top: 90px;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
 }
 
 .hero-left-wrap {
   width: 100%;
   max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
 }
 
 .hero-display-title {
@@ -957,12 +972,14 @@ select.form-input {
   flex-direction: column;
   justify-content: space-between;
   min-height: auto;
+  height: 100%;
 }
 
 .hero-right-wrap {
   width: 100%;
   max-width: 520px;
   margin-left: auto;
+  margin-top: 0;
 }
 
 .hero-hello-title {
@@ -999,12 +1016,12 @@ select.form-input {
 
 /* Hero Section "Scroll to see more" Cue */
 .hero-scroll-wrap {
-  margin-top: var(--space-6);
+  margin-top: auto;
   text-align: right;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding-bottom: 2px;
+  padding-bottom: 8px;
 }
 
 .hero-scroll-cue {
@@ -1052,14 +1069,19 @@ select.form-input {
   .hero-grid {
     column-gap: 0 !important;
     row-gap: 36px;
+    height: auto !important;
   }
   .hero-editorial-left {
     margin-top: 0 !important;
+    height: auto !important;
+    justify-content: flex-start !important;
   }
   .hero-left-wrap,
   .hero-right-wrap {
     max-width: 100%;
     margin-left: 0 !important;
+    height: auto !important;
+    justify-content: flex-start !important;
   }
   .hero-display-title {
     font-size: clamp(36px, 8vw, 48px);
@@ -1067,7 +1089,8 @@ select.form-input {
   }
   .hero-editorial-right {
     min-height: auto !important;
-    justify-content: flex-start;
+    height: auto !important;
+    justify-content: flex-start !important;
   }
   .hero-cv-btn-wrap,
   .hero-scroll-wrap {
