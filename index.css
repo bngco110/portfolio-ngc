@@ -974,8 +974,8 @@ select.form-input {
 }
 
 .hero-bio-p {
-  font-size: 14.5px;
-  margin-bottom: 10px;
+  font-size: 16px;
+  margin-bottom: 12px;
   line-height: 1.6;
   color: var(--color-text-secondary);
 }
@@ -1101,7 +1101,7 @@ select.form-input {
     margin-bottom: 10px;
   }
   .hero-bio-p {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.6;
   }
 }
