@@ -932,7 +932,7 @@ select.form-input {
 
 /* Editorial Reference Hero Layout (Height Offset & Wide Gap) */
 .hero-editorial-left {
-  margin-top: 140px;
+  margin-top: 90px;
 }
 
 .hero-left-wrap {
@@ -2475,7 +2475,7 @@ h3.about-heading-sync {
    completely unaffected in size.
    ========================================================================== */
 .hero-avatar-frame {
-  width: 400px;
+  width: 500px;
   max-width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
@@ -2506,7 +2506,7 @@ h3.about-heading-sync {
 @media (prefers-reduced-motion: reduce) {
   .hero-avatar-frame {
     transition: none !important;
-    width: 420px !important;
+    width: 500px !important;
   }
 }
 

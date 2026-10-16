@@ -296,10 +296,10 @@ function initApp() {
     const heroHeight = getHeroHeight();
     const progress = Math.min(Math.max(scrollY / heroHeight, 0), 1);
 
-    // Expand width from 400px up to 520px (proportionally scaling 4:3 height)
-    const parentWidth = heroAvatarFrame.parentElement ? heroAvatarFrame.parentElement.offsetWidth : 520;
-    const maxTarget = Math.min(520, parentWidth);
-    const minTarget = Math.min(400, maxTarget * 0.77);
+    // Expand width from 500px up to 525px (proportionally scaling 4:3 height)
+    const parentWidth = heroAvatarFrame.parentElement ? heroAvatarFrame.parentElement.offsetWidth : 525;
+    const maxTarget = Math.max(500, Math.min(525, parentWidth));
+    const minTarget = Math.min(500, maxTarget);
     const currentWidth = minTarget + (progress * (maxTarget - minTarget));
 
     heroAvatarFrame.style.width = `${currentWidth.toFixed(1)}px`;
