@@ -71,6 +71,7 @@
   --space-10: 40px;
   --space-12: 48px;
   --space-16: 64px;
+  --space-18: 72px;
   --space-20: 80px;
   --space-24: 96px;
 
@@ -1164,8 +1165,8 @@ select.form-input {
 
 /* Section Wrapper */
 .section {
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-16);
+  padding-top: var(--space-18);
+  padding-bottom: var(--space-18);
   border-bottom: 1px solid var(--color-border-default);
   scroll-margin-top: 72px;
 }
