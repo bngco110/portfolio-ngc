@@ -231,28 +231,104 @@ function initApp() {
   }, { passive: true });
 
   /* ------------------------------------------------------------------------
-     3b. Header Brand Logo & Home Link Smooth Scroll to Hero (Negative Space View)
-     When clicking the BNG brand logo or Home nav link, smoothly scroll to top: 0
-     so only the hero section with its negative space fills the viewport.
+     3b. Header Brand Logo & Home Link Smooth Scroll & Hero Motion Replay
+     When clicking the BNG brand logo or Home nav link in header:
+     - Smoothly scroll to top: 0
+     - Replay hero section motion entrance animations (.hero-animate-left & .hero-animate-right)
      ------------------------------------------------------------------------ */
+  let activeHomeScrollCleanup = null;
+
+  let heroReplayCount = 0;
+
+  function replayHeroMotion() {
+    const heroLeft = document.querySelector('.hero-editorial-left');
+    const heroRight = document.querySelector('.hero-editorial-right');
+    if (!heroLeft || !heroRight) return;
+
+    heroReplayCount++;
+    heroLeft.setAttribute('data-replayed', heroReplayCount);
+    heroRight.setAttribute('data-replayed', heroReplayCount);
+
+    // Reset animations cleanly
+    heroLeft.classList.remove('hero-animate-left');
+    heroRight.classList.remove('hero-animate-right');
+    heroLeft.style.animation = 'none';
+    heroRight.style.animation = 'none';
+
+    // Force DOM reflow to cancel previous animation states
+    void heroLeft.offsetWidth;
+    void heroRight.offsetWidth;
+
+    // Re-apply animations cleanly to restart keyframe from 0%
+    heroLeft.style.animation = '';
+    heroRight.style.animation = '';
+    heroLeft.classList.add('hero-animate-left');
+    heroRight.classList.add('hero-animate-right');
+  }
+
+  function handleHomeClick(e) {
+    const heroSection = document.getElementById('home');
+    if (heroSection) {
+      e.preventDefault();
+      closeMobileNav();
+
+      if (typeof activeHomeScrollCleanup === 'function') {
+        activeHomeScrollCleanup();
+        activeHomeScrollCleanup = null;
+      }
+
+      const startY = window.scrollY || window.pageYOffset || 0;
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+
+      if (history.pushState) {
+        history.pushState(null, null, '#home');
+      }
+
+      if (startY <= 60) {
+        // Already at or near top: replay motion immediately
+        replayHeroMotion();
+      } else {
+        // Scrolled down: replay motion as user approaches top or arrives at top
+        let hasReplayed = false;
+        let timeoutId = null;
+
+        const cleanup = () => {
+          window.removeEventListener('scroll', checkArrival);
+          if (timeoutId) clearTimeout(timeoutId);
+        };
+        activeHomeScrollCleanup = cleanup;
+
+        const checkArrival = () => {
+          const currentY = window.scrollY || window.pageYOffset || 0;
+          if (currentY <= 60 && !hasReplayed) {
+            hasReplayed = true;
+            cleanup();
+            activeHomeScrollCleanup = null;
+            replayHeroMotion();
+          }
+        };
+
+        window.addEventListener('scroll', checkArrival, { passive: true });
+
+        timeoutId = setTimeout(() => {
+          if (!hasReplayed) {
+            hasReplayed = true;
+            cleanup();
+            activeHomeScrollCleanup = null;
+            replayHeroMotion();
+          }
+        }, 450);
+      }
+    }
+  }
+
   const homeTriggers = document.querySelectorAll('.brand-logo, a[href="#home"], a[href="index.html#home"]');
   homeTriggers.forEach(trigger => {
-    trigger.addEventListener('click', (e) => {
-      const isIndexPage = window.location.pathname.endsWith('index.html') ||
-                          window.location.pathname === '/' ||
-                          !window.location.pathname.includes('.html');
-      if (isIndexPage) {
-        e.preventDefault();
-        closeMobileNav();
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-        if (history.pushState) {
-          history.pushState(null, null, '#home');
-        }
-      }
-    });
+    trigger.addEventListener('click', handleHomeClick);
   });
 
   /* ------------------------------------------------------------------------
