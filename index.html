@@ -48,7 +48,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Core Minimalist Web System Stylesheet -->
-  <link rel="stylesheet" href="index.css?v=12.4" />
+  <link rel="stylesheet" href="index.css?v=12.5" />
 </head>
 <body>
 
@@ -721,17 +721,22 @@
   </footer>
 
   <!-- Project Detail Image Lightbox Modal (Backdrop Blur & Case Study Viewer) -->
-  <div id="project-detail-modal" class="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Fanidol Case Study Detail">
+  <div id="project-detail-modal" class="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project Case Study Detail">
     <div class="project-modal-backdrop"></div>
     <button class="project-modal-close" type="button" aria-label="Close modal">
       <i class="fa-solid fa-xmark"></i>
     </button>
     <div class="project-modal-content">
-      <img id="project-modal-img" src="assets/fanidol_detail.png?v=3.0" alt="Fanidol — K-pop Tap-to-Earn Game Platform Case Study" class="project-modal-img" />
+      <!-- Minimalist loading spinner while high-res image loads -->
+      <div class="project-modal-loader" id="projectModalLoader" aria-hidden="true">
+        <div class="modal-spinner"></div>
+        <span class="modal-loader-text">Loading case study...</span>
+      </div>
+      <img id="project-modal-img" src="" alt="Case Study Detail" class="project-modal-img" style="opacity: 0;" />
     </div>
   </div>
 
   <!-- Core JavaScript -->
-  <script src="app.js?v=11.5"></script>
+  <script src="app.js?v=11.6"></script>
 </body>
 </html>

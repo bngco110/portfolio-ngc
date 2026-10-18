@@ -487,29 +487,65 @@ function initApp() {
   }
 
   /* ------------------------------------------------------------------------
-     7. Project Detail Lightbox Modal (Click Product Card 1 to View Case Study)
+     7. Project Detail Lightbox Modal (Click Product Card to View Case Study)
      ------------------------------------------------------------------------ */
   const projectModal = document.getElementById('project-detail-modal');
   const projectModalImg = document.getElementById('project-modal-img');
   const projectModalClose = document.querySelector('.project-modal-close');
-  const card1Fanidol = document.getElementById('project-card-fanidol');
+  const projectModalLoader = document.getElementById('projectModalLoader');
+
+  let activeModalImgSrc = '';
 
   function openProjectModal(imgSrc, altText) {
     if (!projectModal) return;
 
-    // 1. Immediately reset scroll position to the very top (đầu hình ảnh)
+    // Immediately lock modal scroll to the top
     projectModal.scrollTop = 0;
 
     if (projectModalImg && imgSrc) {
-      projectModalImg.src = imgSrc;
-      if (altText) projectModalImg.alt = altText;
+      if (altText) {
+        projectModalImg.alt = altText;
+        projectModal.setAttribute('aria-label', altText);
+      }
 
-      // When image asset finishes loading, guarantee scroll remains locked to the top
-      projectModalImg.onload = function() {
-        if (projectModal) {
-          projectModal.scrollTop = 0;
+      // Check if image is already loaded and matching
+      if (activeModalImgSrc !== imgSrc) {
+        activeModalImgSrc = imgSrc;
+        // 1. Immediately hide previous image so another product never flashes!
+        projectModalImg.style.opacity = '0';
+        if (projectModalLoader) projectModalLoader.style.display = 'flex';
+
+        // 2. Preload target image cleanly
+        const tempImg = new Image();
+        tempImg.onload = function() {
+          // Verify user hasn't switched cards or closed
+          if (activeModalImgSrc === imgSrc && projectModal.classList.contains('is-active')) {
+            projectModalImg.src = imgSrc;
+            projectModalImg.style.opacity = '1';
+            if (projectModalLoader) projectModalLoader.style.display = 'none';
+            projectModal.scrollTop = 0;
+          }
+        };
+        tempImg.onerror = function() {
+          if (activeModalImgSrc === imgSrc) {
+            projectModalImg.src = imgSrc;
+            projectModalImg.style.opacity = '1';
+            if (projectModalLoader) projectModalLoader.style.display = 'none';
+          }
+        };
+        tempImg.src = imgSrc;
+
+        // If image is already cached in memory, reveal immediately
+        if (tempImg.complete && tempImg.naturalWidth > 0) {
+          projectModalImg.src = imgSrc;
+          projectModalImg.style.opacity = '1';
+          if (projectModalLoader) projectModalLoader.style.display = 'none';
         }
-      };
+      } else {
+        // Same image re-opened
+        projectModalImg.style.opacity = '1';
+        if (projectModalLoader) projectModalLoader.style.display = 'none';
+      }
     }
 
     projectModal.classList.add('is-active');
@@ -517,7 +553,7 @@ function initApp() {
     document.body.style.overflow = 'hidden';
     if (cursorFollower) cursorFollower.classList.remove('active');
 
-    // 2. Double-ensure scroll position is at the very top across render ticks
+    // Double-ensure scroll position is at the very top across render ticks
     projectModal.scrollTop = 0;
     requestAnimationFrame(() => {
       if (projectModal) {
@@ -534,9 +570,32 @@ function initApp() {
     projectModal.classList.remove('is-active');
     projectModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-    // Reset scroll to top on close so the next modal opened always starts at the top
     projectModal.scrollTop = 0;
+
+    // Reset image and hide loader after modal exit transition so next open is completely fresh
+    setTimeout(() => {
+      if (!projectModal.classList.contains('is-active')) {
+        activeModalImgSrc = '';
+        if (projectModalImg) {
+          projectModalImg.style.opacity = '0';
+          projectModalImg.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="1"%3E%3C/svg%3E';
+        }
+        if (projectModalLoader) projectModalLoader.style.display = 'none';
+      }
+    }, 250);
   }
+
+  // Preload high-res case study image on card hover for instantaneous zero-latency opening
+  document.addEventListener('mouseover', (e) => {
+    const card = e.target.closest('.project-card-interactive');
+    if (!card) return;
+    const imgSrc = card.getAttribute('data-modal-image');
+    if (imgSrc && !card.hasAttribute('data-preloaded')) {
+      card.setAttribute('data-preloaded', 'true');
+      const preloadImg = new Image();
+      preloadImg.src = imgSrc;
+    }
+  }, { passive: true });
 
   // Click on any interactive product card to view enlarged image / case study detail
   document.addEventListener('click', (e) => {

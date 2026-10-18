@@ -2464,6 +2464,43 @@ h3.about-heading-sync {
   border-radius: 14px;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.12);
   image-rendering: auto;
+  transition: opacity 0.25s ease;
+}
+
+/* Minimalist Loading Spinner for High-Res Detail Images */
+.project-modal-loader {
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  z-index: 10005;
+  color: #FFFFFF;
+  pointer-events: none;
+}
+
+.modal-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-top-color: var(--color-brand-primary, #E3CAA6);
+  border-radius: 50%;
+  animation: modalSpin 0.75s linear infinite;
+}
+
+.modal-loader-text {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: inherit;
+}
+
+@keyframes modalSpin {
+  to { transform: rotate(360deg); }
 }
 
 @media (max-width: 900px) {
