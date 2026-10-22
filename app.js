@@ -182,9 +182,11 @@ function initApp() {
     if (mobileNavBackdrop) {
       mobileNavBackdrop.classList.remove('is-open');
     }
-    // Only clear overflow if project detail modal isn't open
+    // Only clear overflow if neither project detail modal nor CV modal is open
     const modal = document.getElementById('project-detail-modal');
-    if (!modal || !modal.classList.contains('is-active')) {
+    const cvModalEl = document.getElementById('cv-viewer-modal');
+    const isModalActive = (modal && modal.classList.contains('is-active')) || (cvModalEl && cvModalEl.classList.contains('is-active'));
+    if (!isModalActive) {
       document.body.style.overflow = '';
     }
   }
@@ -633,6 +635,94 @@ function initApp() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && projectModal && projectModal.classList.contains('is-active')) {
       closeProjectModal();
+    }
+  });
+
+  /* ------------------------------------------------------------------------
+     8. CV Document Lightbox Modal (View & Download PDF)
+     ------------------------------------------------------------------------ */
+  const cvModal = document.getElementById('cv-viewer-modal');
+  const cvModalClose = document.querySelector('.cv-modal-close');
+  const cvTriggers = document.querySelectorAll('.js-cv-trigger');
+
+  function openCvModal() {
+    if (!cvModal) return;
+
+    // Close mobile nav drawer if open
+    if (typeof closeMobileNav === 'function') {
+      closeMobileNav();
+    }
+
+    // Close project modal if open
+    if (typeof closeProjectModal === 'function') {
+      closeProjectModal();
+    }
+
+    cvModal.scrollTop = 0;
+    cvModal.classList.add('is-active');
+    cvModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (cursorFollower) cursorFollower.classList.remove('active');
+
+    // Reset scroll position to top across render ticks
+    requestAnimationFrame(() => {
+      if (cvModal) {
+        cvModal.scrollTop = 0;
+      }
+    });
+  }
+
+  function closeCvModal() {
+    if (!cvModal) return;
+    cvModal.classList.remove('is-active');
+    cvModal.setAttribute('aria-hidden', 'true');
+    
+    // Only reset body overflow if project modal is also not active
+    const projectModalEl = document.getElementById('project-detail-modal');
+    if (!projectModalEl || !projectModalEl.classList.contains('is-active')) {
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Preload CV page images on trigger hover for instant zero-lag display
+  cvTriggers.forEach((trigger) => {
+    trigger.addEventListener('mouseenter', () => {
+      if (!trigger.hasAttribute('data-preloaded')) {
+        trigger.setAttribute('data-preloaded', 'true');
+        const p1 = new Image();
+        p1.src = 'assets/cv_page_1.png';
+        const p2 = new Image();
+        p2.src = 'assets/cv_page_2.png';
+      }
+    }, { passive: true });
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      openCvModal();
+    });
+  });
+
+  // Close button inside CV modal
+  if (cvModalClose) {
+    cvModalClose.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeCvModal();
+    });
+  }
+
+  // Click backdrop outside modal content & toolbar to close
+  if (cvModal) {
+    cvModal.addEventListener('click', (e) => {
+      if (!e.target.closest('.cv-modal-content') && !e.target.closest('.cv-modal-toolbar')) {
+        closeCvModal();
+      }
+    });
+  }
+
+  // Close CV modal on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && cvModal && cvModal.classList.contains('is-active')) {
+      closeCvModal();
     }
   });
 

@@ -48,7 +48,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Core Minimalist Web System Stylesheet -->
-  <link rel="stylesheet" href="index.css?v=12.5" />
+  <link rel="stylesheet" href="index.css?v=13.0" />
 </head>
 <body>
 
@@ -74,7 +74,7 @@
         <a href="index.html#home" class="nav-link">Home</a>
         <a href="projects.html" class="nav-link active">My projects</a>
         <a href="index.html#about" class="nav-link">About me</a>
-        <a href="#" download onclick="alert('Downloading Ngoc Nguyen UI/UX Designer CV...'); return false;" class="btn btn-primary header-cv-btn">
+        <a href="assets/CV_NgocNguyen_UIUX_Designer.pdf" class="btn btn-primary header-cv-btn js-cv-trigger" aria-label="View and Download CV" role="button">
           <span>Download CV</span>
           <i class="fa-solid fa-arrow-down" style="font-size: 0.85em;"></i>
         </a>
@@ -105,7 +105,7 @@
           <i class="fa-solid fa-arrow-right-long mobile-nav-arrow"></i>
         </a>
         <div class="mobile-nav-cv-wrap">
-          <a href="#" download onclick="alert('Downloading Ngoc Nguyen UI/UX Designer CV...'); return false;" class="btn btn-primary mobile-nav-cv-btn">
+          <a href="assets/CV_NgocNguyen_UIUX_Designer.pdf" class="btn btn-primary mobile-nav-cv-btn js-cv-trigger" aria-label="View and Download CV" role="button">
             <span>Download CV</span>
             <i class="fa-solid fa-arrow-down" style="font-size: 0.85em;"></i>
           </a>
@@ -365,7 +365,68 @@
     </div>
   </div>
 
+  <!-- CV Document Lightbox Modal (Preview & Download PDF) -->
+  <div id="cv-viewer-modal" class="cv-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Ngoc Nguyen — Curriculum Vitae">
+    <div class="cv-modal-backdrop"></div>
+    
+    <!-- Floating Toolbar -->
+    <div class="cv-modal-toolbar">
+      <div class="cv-modal-info">
+        <span class="cv-modal-badge">PDF</span>
+        <div class="cv-modal-titles">
+          <span class="cv-modal-title">Ngoc Nguyen — CV</span>
+          <span class="cv-modal-subtitle">UI/UX Designer • 3 Years Experience</span>
+        </div>
+      </div>
+      <div class="cv-modal-actions">
+        <a href="assets/CV_NgocNguyen_UIUX_Designer.pdf" download="CV_NgocNguyen_UIUX_Designer.pdf" class="cv-action-btn cv-action-download" id="cvModalDownloadBtn" aria-label="Download CV PDF">
+          <i class="fa-solid fa-download"></i>
+          <span>Download CV</span>
+        </a>
+        <a href="assets/CV.pdf" target="_blank" rel="noopener noreferrer" class="cv-action-btn cv-action-external" aria-label="Open PDF in new tab">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>Open PDF</span>
+        </a>
+        <button type="button" class="cv-modal-close" aria-label="Close CV modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal Content: Scrollable 2-page document -->
+    <div class="cv-modal-content">
+      <div class="cv-document-pages">
+        <div class="cv-page-wrapper">
+          <div class="cv-page-number">Page 1 / 2</div>
+          <img src="assets/cv_page_1.png" alt="Ngoc Nguyen UI/UX Designer CV - Page 1" class="cv-page-img" loading="eager" />
+        </div>
+        <div class="cv-page-wrapper">
+          <div class="cv-page-number">Page 2 / 2</div>
+          <img src="assets/cv_page_2.png" alt="Ngoc Nguyen UI/UX Designer CV - Page 2" class="cv-page-img" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- CV Bottom CTA Banner -->
+      <div class="cv-bottom-banner">
+        <div class="cv-bottom-content">
+          <h4 class="cv-bottom-title">Let's build something remarkable together</h4>
+          <p class="cv-bottom-desc">You can download the full PDF file or contact directly via email.</p>
+        </div>
+        <div class="cv-bottom-actions">
+          <a href="assets/CV_NgocNguyen_UIUX_Designer.pdf" download="CV_NgocNguyen_UIUX_Designer.pdf" class="btn btn-primary cv-bottom-download-btn">
+            <i class="fa-solid fa-download"></i>
+            <span>Download PDF (1.9 MB)</span>
+          </a>
+          <a href="mailto:nguyendaobaongoc110@gmail.com" class="btn btn-secondary cv-bottom-email-btn">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Send Email</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Core JavaScript -->
-  <script src="app.js?v=11.6"></script>
+  <script src="app.js?v=12.0"></script>
 </body>
 </html>
