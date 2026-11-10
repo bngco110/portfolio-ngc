@@ -1668,7 +1668,20 @@ select.form-input {
   padding: 0;
 }
 
-/* About Section Left Column Profile Layout */
+/* About Section Left Column Profile Layout & Sticky Behavior */
+.about-profile-col {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+}
+
+@media (max-width: 1199px) {
+  .about-profile-col {
+    position: static !important;
+    top: auto !important;
+  }
+}
+
 .about-profile-card {
   display: flex;
   flex-direction: column;
@@ -1678,6 +1691,12 @@ select.form-input {
 @media (max-width: 1199px) {
   .about-profile-card {
     padding-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-profile-card {
+    padding-bottom: var(--space-2);
   }
 }
 
@@ -1868,6 +1887,14 @@ select.form-input {
 
 .accordion-body.collapsed {
   display: none !important;
+}
+
+/* Responsive accordion entries on mobile screens: prevent date/title collision */
+@media (max-width: 576px) {
+  .accordion-body div[style*="justify-content: space-between"] {
+    flex-wrap: wrap !important;
+    row-gap: 6px !important;
+  }
 }
 
 /* Horizontal Project Cards */
